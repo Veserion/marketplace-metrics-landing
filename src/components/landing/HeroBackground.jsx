@@ -1,51 +1,66 @@
 import React from 'react';
-import { motion } from "framer-motion";
-import { ShieldCheck, Lock } from "lucide-react";
+import { motion } from 'framer-motion';
 
-export default function GuaranteeSection() {
+// Animated gradient spheres that float and pulse
+const spheres = [
+  {
+    size: 700,
+    initialX: '60%',
+    initialY: '-10%',
+    animateX: ['60%', '55%', '65%', '58%', '60%'],
+    animateY: ['-10%', '5%', '-5%', '10%', '-10%'],
+    color: 'radial-gradient(circle, rgba(99,102,241,0.35) 0%, rgba(99,102,241,0) 70%)',
+    duration: 18,
+  },
+  {
+    size: 550,
+    initialX: '-10%',
+    initialY: '30%',
+    animateX: ['-10%', '0%', '-5%', '5%', '-10%'],
+    animateY: ['30%', '40%', '25%', '45%', '30%'],
+    color: 'radial-gradient(circle, rgba(139,92,246,0.30) 0%, rgba(139,92,246,0) 70%)',
+    duration: 22,
+  },
+  {
+    size: 400,
+    initialX: '40%',
+    initialY: '60%',
+    animateX: ['40%', '50%', '35%', '45%', '40%'],
+    animateY: ['60%', '55%', '70%', '58%', '60%'],
+    color: 'radial-gradient(circle, rgba(59,130,246,0.25) 0%, rgba(59,130,246,0) 70%)',
+    duration: 15,
+  },
+];
+
+export default function HeroBackground() {
   return (
-    <section className="py-16 lg:py-24">
-      <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex flex-col gap-4">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="flex flex-col md:flex-row items-center gap-6 p-8 rounded-2xl bg-white border border-border shadow-sm"
-          >
-            <div className="w-16 h-16 rounded-2xl bg-green-50 flex items-center justify-center flex-shrink-0">
-              <ShieldCheck className="w-8 h-8 text-green-600" />
-            </div>
-            <div>
-              <h3 className="font-bold text-xl text-foreground mb-2">Гарантия результата</h3>
-              <p className="text-muted-foreground leading-relaxed">
-                Если сервис не помогает контролировать показатели вашего магазина, вы можете
-                отказаться от подписки в любой момент. Мы уверены в качестве продукта,
-                поэтому даём 7 дней бесплатного доступа.
-              </p>
-            </div>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.1 }}
-            className="flex flex-col md:flex-row items-center gap-6 p-8 rounded-2xl bg-white border border-border shadow-sm"
-          >
-            <div className="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center flex-shrink-0">
-              <Lock className="w-8 h-8 text-primary" />
-            </div>
-            <div>
-              <h3 className="font-bold text-xl text-foreground mb-2">Ваши данные в безопасности</h3>
-              <p className="text-muted-foreground leading-relaxed">
-                Все данные пользователей хранятся на защищённом сервере и остаются
-                абсолютно конфиденциальными. Мы не передаём и не продаём информацию третьим лицам.
-              </p>
-            </div>
-          </motion.div>
-        </div>
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        {spheres.map((s, i) => (
+            <motion.div
+                key={i}
+                style={{
+                  position: 'absolute',
+                  width: s.size,
+                  height: s.size,
+                  left: s.initialX,
+                  top: s.initialY,
+                  background: s.color,
+                  borderRadius: '50%',
+                  filter: 'blur(80px)',
+                }}
+                animate={{
+                  left: s.animateX,
+                  top: s.animateY,
+                  opacity: [0.7, 1, 0.5, 0.9, 0.7],
+                  scale: [1, 1.08, 0.95, 1.05, 1],
+                }}
+                transition={{
+                  duration: s.duration,
+                  repeat: Infinity,
+                  ease: 'easeInOut',
+                }}
+            />
+        ))}
       </div>
-    </section>
   );
 }
