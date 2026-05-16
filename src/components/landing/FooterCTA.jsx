@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import Logo from './Logo';
 import { Link } from 'react-router-dom';
+import BetaRequestDialog from './BetaRequestDialog';
 
 export default function FooterCTA() {
   return (
@@ -25,7 +26,7 @@ export default function FooterCTA() {
             Подайте заявку на бета-тест. Если заявка будет одобрена,
             вы получите 3 месяца бесплатного доступа.
           </p>
-          <a href="#pricing">
+          <BetaRequestDialog>
             <Button
               size="lg"
               className="gradient-bp hover:opacity-90 text-white font-bold text-lg px-10 py-7 rounded-full shadow-lg shadow-purple-300/30 hover:shadow-purple-400/40 transition-all border-0"
@@ -33,10 +34,7 @@ export default function FooterCTA() {
               Подать заявку на бета-тест
               <ArrowRight className="w-5 h-5 ml-2" />
             </Button>
-          </a>
-          <p className="mt-4 text-xs text-muted-foreground">
-            Форму заявки добавим следующим шагом
-          </p>
+          </BetaRequestDialog>
         </motion.div>
       </div>
 

@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { UploadCloud, BarChart3, TrendingUp, Package, DollarSign, ArrowRight, CheckCircle2 } from "lucide-react";
 import { AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
+import BetaRequestDialog from './BetaRequestDialog';
 
 const salesData = [
   { day: '1', revenue: 12400 }, { day: '5', revenue: 18200 }, { day: '10', revenue: 15800 },
@@ -164,12 +165,12 @@ export default function DemoSection() {
 
               <div className="text-center pt-4">
                 <p className="text-sm text-muted-foreground mb-4">Это только часть возможностей сервиса</p>
-                <a href="#pricing">
+                <BetaRequestDialog>
                   <Button className="bg-primary hover:bg-primary/90 text-white font-bold rounded-full px-8 shadow-md">
                     Подать заявку на бета-тест
                     <ArrowRight className="w-5 h-5 ml-2" />
                   </Button>
-                </a>
+                </BetaRequestDialog>
               </div>
             </motion.div>
           )}

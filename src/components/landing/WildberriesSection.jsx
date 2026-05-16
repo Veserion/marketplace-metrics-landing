@@ -2,6 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/button';
 import { ArrowRight, Gift, BarChart3, Package, TrendingUp, Star } from 'lucide-react';
+import BetaRequestDialog from './BetaRequestDialog';
 
 const wbFeatures = [
   { icon: BarChart3, title: 'Полная аналитика по 1 отчёту', desc: 'Загрузите один файл из кабинета WB — и получите всю картину: выручку, прибыль, комиссии, возвраты.' },
@@ -109,12 +110,12 @@ export default function WildberriesSection() {
                     </li>
                   ))}
                 </ul>
-                <a href="#pricing">
+                <BetaRequestDialog>
                   <Button className="gradient-bp hover:opacity-90 text-white font-bold px-8 py-5 rounded-full shadow-lg shadow-purple-300/30 border-0">
                     Подать заявку на бета-тест
                     <ArrowRight className="w-5 h-5 ml-2" />
                   </Button>
-                </a>
+                </BetaRequestDialog>
               </div>
 
               {/* Right: ABC groups visualization */}

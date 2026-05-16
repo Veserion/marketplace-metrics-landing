@@ -5,6 +5,7 @@ import { ArrowRight, CheckCircle2, XCircle } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import Logo from '@/components/landing/Logo';
 import SiteFooter from '@/components/landing/SiteFooter';
+import BetaRequestDialog from '@/components/landing/BetaRequestDialog';
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, Cell } from 'recharts';
 
 const fadeUp = { hidden: { opacity: 0, y: 28 }, visible: { opacity: 1, y: 0, transition: { duration: 0.55 } } };
@@ -53,11 +54,11 @@ export default function AnalyticsOzon() {
             <Logo className="w-8 h-8" />
             <span className="font-inter font-bold text-base text-foreground">Маркетплейс Метрика</span>
           </Link>
-          <Link to="/#pricing">
+          <BetaRequestDialog>
             <Button className="gradient-bp hover:opacity-90 text-white font-semibold px-6 rounded-full shadow-sm border-0 text-sm">
               Подать заявку
             </Button>
-          </Link>
+          </BetaRequestDialog>
         </div>
       </nav>
 
@@ -80,12 +81,12 @@ export default function AnalyticsOzon() {
               <p className="text-lg sm:text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed mb-10">
                 Ozon предоставляет селлерам подробные отчёты, но работать с ними сложно. Все данные находятся в разных отчётах и не дают единой картины.
               </p>
-              <Link to="/#pricing">
+              <BetaRequestDialog>
                 <Button size="lg" className="gradient-bp hover:opacity-90 text-white font-bold px-8 py-6 rounded-full shadow-lg border-0">
                   Подать заявку на бета-тест
                   <ArrowRight className="w-5 h-5 ml-2" />
                 </Button>
-              </Link>
+              </BetaRequestDialog>
             </motion.div>
           </div>
         </section>
@@ -207,12 +208,12 @@ export default function AnalyticsOzon() {
             <p className="text-foreground font-bold text-xl mb-8">
               Чем быстрее вы начнёте видеть реальные цифры, тем быстрее начнёте зарабатывать больше.
             </p>
-            <Link to="/#pricing">
+            <BetaRequestDialog>
               <Button size="lg" className="gradient-bp hover:opacity-90 text-white font-bold px-10 py-6 rounded-full shadow-lg border-0">
                 Подать заявку на бета-тест
                 <ArrowRight className="w-5 h-5 ml-2" />
               </Button>
-            </Link>
+            </BetaRequestDialog>
           </motion.div>
         </section>
 

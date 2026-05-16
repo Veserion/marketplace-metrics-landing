@@ -4,6 +4,7 @@ import { Badge } from "@/components/ui/badge";
 import { ArrowRight, FileSpreadsheet, Plug, Clock, ImagePlus, X } from "lucide-react";
 import { motion } from "framer-motion";
 import HeroBackground from './HeroBackground';
+import BetaRequestDialog from './BetaRequestDialog';
 
 export default function HeroSection() {
   const [heroImg, setHeroImg] = useState(null);
@@ -78,7 +79,7 @@ export default function HeroSection() {
                 transition={{ duration: 0.6, delay: 0.45 }}
                 className="mt-10"
             >
-              <a href="#pricing">
+              <BetaRequestDialog>
                 <Button
                     size="lg"
                     className="gradient-bp hover:opacity-90 text-white font-bold text-base px-8 py-6 rounded-full shadow-lg shadow-purple-300/30 hover:shadow-purple-400/40 transition-all duration-300 border-0"
@@ -86,7 +87,7 @@ export default function HeroSection() {
                   Подать заявку на бета-тест
                   <ArrowRight className="w-5 h-5 ml-2" />
                 </Button>
-              </a>
+              </BetaRequestDialog>
             </motion.div>
           </div>
 

@@ -2,6 +2,7 @@ import React from 'react';
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Check, ArrowRight, Shield, Upload, Zap } from "lucide-react";
+import BetaRequestDialog from './BetaRequestDialog';
 
 const betaSteps = [
   {
@@ -149,17 +150,15 @@ export default function PricingSection() {
               ))}
             </div>
 
-            <Button
-              size="lg"
-              className="w-full gradient-bp hover:opacity-90 text-white font-bold text-base py-6 rounded-full shadow-lg shadow-purple-300/30 border-0"
-            >
-              Подать заявку на бета-тест
-              <ArrowRight className="w-5 h-5 ml-2" />
-            </Button>
-
-            <p className="text-xs text-muted-foreground text-center mt-4">
-              Форму заявки добавим в этот блок следующим шагом
-            </p>
+            <BetaRequestDialog>
+              <Button
+                size="lg"
+                className="w-full gradient-bp hover:opacity-90 text-white font-bold text-base py-6 rounded-full shadow-lg shadow-purple-300/30 border-0"
+              >
+                Подать заявку на бета-тест
+                <ArrowRight className="w-5 h-5 ml-2" />
+              </Button>
+            </BetaRequestDialog>
           </div>
         </motion.div>
         </div>

@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import Logo from './Logo';
+import BetaRequestDialog from './BetaRequestDialog';
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -50,11 +51,11 @@ export default function Navbar() {
           </div>
 
           <div className="hidden md:block">
-            <a href="#pricing">
+            <BetaRequestDialog>
               <Button className="gradient-bp hover:opacity-90 text-white font-semibold px-6 rounded-full shadow-sm border-0">
                 Подать заявку
               </Button>
-            </a>
+            </BetaRequestDialog>
           </div>
 
           <button
@@ -85,11 +86,14 @@ export default function Navbar() {
                   {link.label}
                 </a>
               ))}
-              <a href="#pricing" onClick={() => setMobileOpen(false)}>
-                <Button className="w-full gradient-bp hover:opacity-90 text-white font-semibold rounded-full mt-2 border-0">
+              <BetaRequestDialog>
+                <Button
+                  className="w-full gradient-bp hover:opacity-90 text-white font-semibold rounded-full mt-2 border-0"
+                  onClick={() => setMobileOpen(false)}
+                >
                   Подать заявку
                 </Button>
-              </a>
+              </BetaRequestDialog>
             </div>
           </motion.div>
         )}
