@@ -4,10 +4,10 @@ import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import ImageUploadBox from './ImageUploadBox';
 
 const screens = [
-  { id: 'dashboard', label: 'Общий дашборд', img: '/__generating__/img_8a5017dddae5.png' },
-  { id: 'products', label: 'Прибыль по товарам', img: '/__generating__/img_a3564b9a09d8.png' },
-  { id: 'losses', label: 'Убыточные товары', img: '/__generating__/img_ee120fa27b77.png' },
-  { id: 'dynamics', label: 'Динамика продаж', img: '/__generating__/img_06798a0b1901.png' },
+  { id: 'dashboard', label: 'Общий дашборд', img: '/screenshots/dashboard_wb_full.png' },
+  { id: 'products', label: 'Структура выручки', img: '/screenshots/unit_total.png' },
+  { id: 'losses', label: 'Убыточные товары', img: '/screenshots/ubitochnie.png' },
+  { id: 'dynamics', label: 'Динамика продаж', img: '/screenshots/dinamika.png' },
 ];
 
 export default function InterfaceShowcase() {
@@ -56,19 +56,12 @@ export default function InterfaceShowcase() {
         >
           <div className="absolute -inset-3 bg-primary/8 rounded-3xl blur-2xl" />
           <div className="relative rounded-2xl overflow-hidden border border-border shadow-xl bg-white">
-            {active === 'dashboard' ? (
-              <ImageUploadBox
-                label="Общий дашборд"
-                hint="Скриншот главного дашборда · рекомендуемый размер 1200×700"
-                className="min-h-[320px]"
-              />
-            ) : (
-              <img
-                src={currentScreen.img}
-                alt={currentScreen.label}
-                className="w-full h-auto"
-              />
-            )}
+            <ImageUploadBox
+              src={currentScreen.img}
+              label={currentScreen.label}
+              hint="Скриншот интерфейса · рекомендуемый размер 1200×700"
+              className="min-h-[320px] rounded-none border-0 shadow-none"
+            />
           </div>
         </motion.div>
       </div>

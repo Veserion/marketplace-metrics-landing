@@ -14,6 +14,8 @@ const platforms = [
     ourLabel: 'Метрика: Wildberries',
     marketplaceHint: 'Скриншот из кабинета WB · рекомендуемый размер 700×450',
     ourHint: 'Наш отчёт по WB · рекомендуемый размер 700×450',
+    marketplaceSrc: '/screenshots/wildberries-marketplace-analytics.png',
+    ourSrc: '/screenshots/wildberries-metrika-analytics.png',
   },
   {
     name: 'Ozon',
@@ -25,6 +27,8 @@ const platforms = [
     ourLabel: 'Метрика: Ozon',
     marketplaceHint: 'Скриншот из кабинета Ozon · рекомендуемый размер 700×450',
     ourHint: 'Наш отчёт по Ozon · рекомендуемый размер 700×450',
+    marketplaceSrc: '/screenshots/ozon-marketplace-analytics.png',
+    ourSrc: '/screenshots/ozon-metrika-analytics.png',
   },
 ];
 
@@ -81,6 +85,7 @@ export default function MarketplaceComparisonSection() {
                     <span className="text-xs font-semibold text-muted-foreground">Стандартная аналитика</span>
                   </div>
                   <ImageUploadBox
+                    src={platform.marketplaceSrc}
                     label={platform.marketplaceLabel}
                     hint={platform.marketplaceHint}
                     className="min-h-[260px]"
@@ -109,6 +114,7 @@ export default function MarketplaceComparisonSection() {
                     <span className="text-xs font-semibold text-white">Маркетплейс Метрика</span>
                   </div>
                   <ImageUploadBox
+                    src={platform.ourSrc}
                     label={platform.ourLabel}
                     hint={platform.ourHint}
                     className="min-h-[260px] border-primary/40"

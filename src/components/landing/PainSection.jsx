@@ -53,11 +53,13 @@ export default function PainSection() {
           className="grid md:grid-cols-2 gap-6"
         >
           <ImageUploadBox
+            src="/screenshots/excel.png"
             label="Скриншот: хаос Excel"
             hint="Пример сложного Excel-отчёта · рекомендуемый размер 800×500"
             className="min-h-[240px]"
           />
           <ImageUploadBox
+            src="/screenshots/dashboard_wb_small.png"
             label="Скриншот: Метрика"
             hint="Пример нашего дашборда · рекомендуемый размер 800×500"
             className="min-h-[240px]"

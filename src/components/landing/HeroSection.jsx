@@ -1,20 +1,13 @@
-import React, { useRef, useState } from 'react';
+import React from 'react';
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { ArrowRight, FileSpreadsheet, Plug, Clock, ImagePlus, X } from "lucide-react";
+import { ArrowRight, FileSpreadsheet, Plug, Clock } from "lucide-react";
 import { motion } from "framer-motion";
 import HeroBackground from './HeroBackground';
 import BetaRequestDialog from './BetaRequestDialog';
+import ImageUploadBox from './ImageUploadBox';
 
 export default function HeroSection() {
-  const [heroImg, setHeroImg] = useState(null);
-  const fileInputRef = useRef(null);
-
-  const handleFileChange = (e) => {
-    const file = e.target.files[0];
-    if (file) setHeroImg(URL.createObjectURL(file));
-  };
-
   return (
       <section className="relative min-h-screen flex items-center overflow-hidden pt-20">
         <HeroBackground />
@@ -99,39 +92,13 @@ export default function HeroSection() {
               className="mt-16 lg:mt-20 relative max-w-5xl mx-auto"
           >
             <div className="absolute -inset-3 bg-primary/10 rounded-2xl blur-2xl" />
-            <div className="relative rounded-2xl overflow-hidden border-2 border-dashed border-primary/30 shadow-2xl shadow-primary/10 bg-white min-h-[300px]">
-              {heroImg ? (
-                  <div className="relative group">
-                    <img
-                        src={heroImg}
-                        alt="Маркетплейс Метрика — аналитический дашборд"
-                        className="w-full h-auto"
-                    />
-                    <button
-                        onClick={() => setHeroImg(null)}
-                        className="absolute top-3 right-3 bg-white/90 rounded-full p-1.5 shadow opacity-0 group-hover:opacity-100 transition-opacity"
-                    >
-                      <X className="w-4 h-4 text-foreground" />
-                    </button>
-                  </div>
-              ) : (
-                  <button
-                      onClick={() => fileInputRef.current?.click()}
-                      className="w-full h-full min-h-[300px] flex flex-col items-center justify-center gap-3 text-muted-foreground hover:text-primary hover:bg-primary/5 transition-colors p-12"
-                  >
-                    <ImagePlus className="w-12 h-12 opacity-40" />
-                    <span className="text-base font-medium">Нажмите, чтобы загрузить скриншот дашборда</span>
-                    <span className="text-sm opacity-60">PNG, JPG — рекомендуемый размер 1200×700</span>
-                  </button>
-              )}
-              <input
-                  ref={fileInputRef}
-                  type="file"
-                  accept="image/*"
-                  className="hidden"
-                  onChange={handleFileChange}
-              />
-            </div>
+            <ImageUploadBox
+              src="/screenshots/dashboard_wb_full.png"
+              label="Скриншот дашборда"
+              hint="PNG, JPG — рекомендуемый размер 1200×700"
+              className="relative rounded-2xl border-primary/30 shadow-2xl shadow-primary/10 min-h-[300px]"
+              imageClassName="h-auto"
+            />
           </motion.div>
         </div>
       </section>

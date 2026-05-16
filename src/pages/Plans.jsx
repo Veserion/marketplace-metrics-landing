@@ -136,6 +136,7 @@ export default function Plans() {
                   <p className="text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-3">Интерфейс базового тарифа</p>
                 </div>
                 <ImageUploadBox
+                  src="/screenshots/basic-plan-interface.png"
                   label="Скриншот базового тарифа"
                   hint="Загрузите скриншот интерфейса базового тарифа · 1200×700"
                   className="min-h-[200px] rounded-none border-0 shadow-none"
@@ -197,6 +198,7 @@ export default function Plans() {
                   <p className="text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-3">Интерфейс профессионального тарифа</p>
                 </div>
                 <ImageUploadBox
+                  src="/screenshots/pro-plan-interface.png"
                   label="Скриншот профессионального тарифа"
                   hint="Загрузите скриншот интерфейса профессионального тарифа · 1200×700"
                   className="min-h-[200px] rounded-none border-0 shadow-none"

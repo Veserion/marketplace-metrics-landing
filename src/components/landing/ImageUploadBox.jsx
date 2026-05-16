@@ -1,9 +1,11 @@
 import React, { useState, useRef } from 'react';
 import { UploadCloud, X } from "lucide-react";
 
-export default function ImageUploadBox({ label, hint, className = '' }) {
+export default function ImageUploadBox({ src, label, hint, className = '', imageClassName = '' }) {
   const [img, setImg] = useState(null);
+  const [srcFailed, setSrcFailed] = useState(false);
   const inputRef = useRef();
+  const imageSrc = img || (!srcFailed ? src : null);
 
   const handleFile = (file) => {
     if (!file || !file.type.startsWith('image/')) return;
@@ -21,15 +23,24 @@ export default function ImageUploadBox({ label, hint, className = '' }) {
       onDragOver={(e) => e.preventDefault()}
       onDrop={onDrop}
     >
-      {img ? (
+      {imageSrc ? (
         <>
-          <img src={img} alt={label} className="w-full h-full object-cover" />
-          <button
-            onClick={() => setImg(null)}
-            className="absolute top-2 right-2 bg-white/90 rounded-full p-1 shadow hover:bg-white transition"
-          >
-            <X className="w-4 h-4 text-foreground" />
-          </button>
+          <img
+            src={imageSrc}
+            alt={label}
+            className={`w-full h-full object-cover ${imageClassName}`}
+            onError={() => {
+              if (!img && src) setSrcFailed(true);
+            }}
+          />
+          {img && (
+            <button
+              onClick={() => setImg(null)}
+              className="absolute top-2 right-2 bg-white/90 rounded-full p-1 shadow hover:bg-white transition"
+            >
+              <X className="w-4 h-4 text-foreground" />
+            </button>
+          )}
         </>
       ) : (
         <div

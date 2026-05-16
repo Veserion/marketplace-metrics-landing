@@ -103,19 +103,19 @@ export default function BetaRequestDialog({ children }) {
       <DialogTrigger asChild>{children}</DialogTrigger>
       <DialogContent className="max-h-[90vh] overflow-y-auto sm:max-w-xl">
         {status === 'success' ? (
-          <div className="py-8 text-center">
+          <div className="flex flex-col items-center px-2 py-10 text-center sm:px-8">
             <div className="mx-auto mb-5 flex h-14 w-14 items-center justify-center rounded-2xl bg-green-50">
               <CheckCircle2 className="h-7 w-7 text-green-600" />
             </div>
-            <DialogHeader className="text-center">
+            <DialogHeader className="items-center text-center sm:text-center">
               <DialogTitle className="text-2xl">Заявка отправлена</DialogTitle>
-              <DialogDescription className="mx-auto max-w-sm">
+              <DialogDescription className="mx-auto max-w-md text-base leading-relaxed">
                 Мы рассмотрим её вручную и свяжемся с вами, если сможем открыть доступ на этапе бета-теста.
               </DialogDescription>
             </DialogHeader>
             <Button
               type="button"
-              className="mt-8 rounded-full px-8"
+              className="mt-8 min-w-40 rounded-full px-8"
               onClick={() => setOpen(false)}
             >
               Закрыть
