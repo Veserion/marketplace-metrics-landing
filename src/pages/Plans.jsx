@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { ArrowLeft, Check, X, Zap, Shield, Upload, ImagePlus } from 'lucide-react';
+import { ArrowLeft, Check, X, Zap, Shield, Upload } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import Logo from '@/components/landing/Logo';
 import ImageUploadBox from '@/components/landing/ImageUploadBox';

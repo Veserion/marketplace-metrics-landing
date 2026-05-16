@@ -18,7 +18,7 @@ const features = [
 
 export default function FeaturesGrid() {
   return (
-    <section id="features" className="py-20 lg:py-32 bg-white">
+    <section id="features" className="py-20 lg:py-32 bg-background">
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -42,7 +42,7 @@ export default function FeaturesGrid() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.05 }}
-              className="p-6 rounded-2xl bg-background border border-border hover:shadow-md hover:border-primary/30 transition-all group"
+              className="p-6 rounded-2xl bg-white border border-border hover:shadow-md hover:border-primary/30 transition-all group"
             >
               <div className={`w-12 h-12 rounded-xl flex items-center justify-center mb-4 ${f.color.split(' ')[0]}`}>
                 <f.icon className={`w-6 h-6 ${f.color.split(' ')[1]}`} />

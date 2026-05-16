@@ -37,7 +37,7 @@ const advantages = [
 
 export default function MarketplaceComparisonSection() {
   return (
-    <section className="py-20 lg:py-32 relative overflow-hidden">
+    <section className="py-20 lg:py-32 relative overflow-hidden bg-white">
       {/* Gradient background blobs */}
       <div className="absolute top-0 left-0 w-[500px] h-[500px] rounded-full bg-blue-200/30 blur-[140px] pointer-events-none" />
       <div className="absolute bottom-0 right-0 w-[500px] h-[500px] rounded-full bg-purple-200/30 blur-[140px] pointer-events-none" />

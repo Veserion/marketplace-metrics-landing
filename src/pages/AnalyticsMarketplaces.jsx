@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { ArrowRight, BarChart2, TrendingUp, DollarSign, Package, Zap, ShieldCheck, CheckCircle2, XCircle } from 'lucide-react';
+import { ArrowRight, CheckCircle2, XCircle } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import Logo from '@/components/landing/Logo';
 import SiteFooter from '@/components/landing/SiteFooter';
@@ -25,7 +25,7 @@ const withoutAnalytics = [
 ];
 
 const advantages = [
-  { num: '1', title: 'Минимальная цена', text: 'Сервис стоит всего 150 рублей в месяц — доступен каждому селлеру.' },
+  { num: '1', title: 'Бета-доступ', text: 'Одобренные участники получат 3 месяца бесплатного доступа и смогут повлиять на развитие продукта.' },
   { num: '2', title: 'Только нужные данные', text: 'Мы убрали всё лишнее. Только ключевые показатели, которые реально влияют на прибыль.' },
   { num: '3', title: 'Простота использования', text: 'Не нужно разбираться в Excel, формулах и сложных системах.' },
   { num: '4', title: 'Интуитивный интерфейс', text: 'Понятно с первого взгляда — даже если вы новичок.' },
@@ -56,7 +56,7 @@ export default function AnalyticsMarketplaces() {
           </Link>
           <Link to="/#pricing">
             <Button className="gradient-bp hover:opacity-90 text-white font-semibold px-6 rounded-full shadow-sm border-0 text-sm">
-              Попробовать бесплатно
+              Подать заявку
             </Button>
           </Link>
         </div>
@@ -83,7 +83,7 @@ export default function AnalyticsMarketplaces() {
               </p>
               <Link to="/#pricing">
                 <Button size="lg" className="gradient-bp hover:opacity-90 text-white font-bold px-8 py-6 rounded-full shadow-lg border-0">
-                  Попробовать бесплатно
+                  Подать заявку на бета-тест
                   <ArrowRight className="w-5 h-5 ml-2" />
                 </Button>
               </Link>
@@ -222,7 +222,7 @@ export default function AnalyticsMarketplaces() {
             </p>
             <Link to="/#pricing">
               <Button size="lg" className="gradient-bp hover:opacity-90 text-white font-bold px-10 py-6 rounded-full shadow-lg border-0">
-                Начать бесплатный триал
+                Подать заявку на бета-тест
                 <ArrowRight className="w-5 h-5 ml-2" />
               </Button>
             </Link>

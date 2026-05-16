@@ -25,7 +25,7 @@ export default function SiteFooter() {
               <Link to="/analytics-marketplaces" className="text-sm text-muted-foreground hover:text-foreground transition-colors">Аналитика маркетплейсов</Link>
               <Link to="/analytics-wildberries" className="text-sm text-muted-foreground hover:text-foreground transition-colors">Аналитика Wildberries</Link>
               <Link to="/analytics-ozon" className="text-sm text-muted-foreground hover:text-foreground transition-colors">Аналитика Ozon</Link>
-              <Link to="/plans" className="text-sm text-muted-foreground hover:text-foreground transition-colors">Тарифные планы</Link>
+              <Link to="/#pricing" className="text-sm text-muted-foreground hover:text-foreground transition-colors">Бета-тест</Link>
             </div>
           </div>
 

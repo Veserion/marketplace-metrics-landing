@@ -1,7 +1,7 @@
 import { Toaster } from "@/components/ui/toaster"
 import { QueryClientProvider } from '@tanstack/react-query'
 import { queryClientInstance } from '@/lib/query-client'
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { BrowserRouter as Router, Navigate, Route, Routes } from 'react-router-dom';
 import Landing from './pages/Landing';
 import AnalyticsMarketplaces from './pages/AnalyticsMarketplaces';
 import AnalyticsWildberries from './pages/AnalyticsWildberries';
@@ -11,7 +11,6 @@ import Privacy from './pages/legal/Privacy';
 import PersonalData from './pages/legal/PersonalData';
 import Refund from './pages/legal/Refund';
 import Terms from './pages/legal/Terms';
-import Plans from './pages/Plans';
 // Add page imports here
 
 const AuthenticatedApp = () => {
@@ -27,7 +26,7 @@ const AuthenticatedApp = () => {
       <Route path="/personal-data" element={<PersonalData />} />
       <Route path="/refund" element={<Refund />} />
       <Route path="/terms" element={<Terms />} />
-      <Route path="/plans" element={<Plans />} />
+      <Route path="/plans" element={<Navigate to="/#pricing" replace />} />
     </Routes>
   );
 };

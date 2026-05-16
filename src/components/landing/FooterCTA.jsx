@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom';
 
 export default function FooterCTA() {
   return (
-    <section className="relative py-20 lg:py-32 overflow-hidden">
+    <section className="relative pt-20 pb-0 lg:pt-32 lg:pb-0 overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-br from-primary/6 via-background to-blue-50/60" />
       <div className="absolute top-0 right-0 w-[500px] h-[500px] rounded-full bg-primary/8 blur-[140px] pointer-events-none" />
 
@@ -22,21 +22,20 @@ export default function FooterCTA() {
             <span className="gradient-bp-text">реально зарабатываете</span>
           </h2>
           <p className="text-lg text-muted-foreground mb-10 max-w-xl mx-auto">
-            Загрузите 2 отчёта и получите полную аналитику вашего магазина.
-            Первые 7 дней — бесплатно.
+            Подайте заявку на бета-тест. Если заявка будет одобрена,
+            вы получите 3 месяца бесплатного доступа.
           </p>
-          <Button
-            size="lg"
-            className="gradient-bp hover:opacity-90 text-white font-bold text-lg px-10 py-7 rounded-full shadow-lg shadow-purple-300/30 hover:shadow-purple-400/40 transition-all border-0"
-          >
-            Начать бесплатный триал
-            <ArrowRight className="w-5 h-5 ml-2" />
-          </Button>
+          <a href="#pricing">
+            <Button
+              size="lg"
+              className="gradient-bp hover:opacity-90 text-white font-bold text-lg px-10 py-7 rounded-full shadow-lg shadow-purple-300/30 hover:shadow-purple-400/40 transition-all border-0"
+            >
+              Подать заявку на бета-тест
+              <ArrowRight className="w-5 h-5 ml-2" />
+            </Button>
+          </a>
           <p className="mt-4 text-xs text-muted-foreground">
-            Переходя в Telegram, вы принимаете{' '}
-            <Link to="/offer" className="underline underline-offset-2 hover:text-foreground transition-colors">условия оферты</Link>
-            {' '}и{' '}
-            <Link to="/privacy" className="underline underline-offset-2 hover:text-foreground transition-colors">политики конфиденциальности</Link>
+            Форму заявки добавим следующим шагом
           </p>
         </motion.div>
       </div>
@@ -65,7 +64,7 @@ export default function FooterCTA() {
                 <Link to="/analytics-marketplaces" className="text-sm text-muted-foreground hover:text-foreground transition-colors">Аналитика маркетплейсов</Link>
                 <Link to="/analytics-wildberries" className="text-sm text-muted-foreground hover:text-foreground transition-colors">Аналитика Wildberries</Link>
                 <Link to="/analytics-ozon" className="text-sm text-muted-foreground hover:text-foreground transition-colors">Аналитика Ozon</Link>
-                <Link to="/plans" className="text-sm text-muted-foreground hover:text-foreground transition-colors">Тарифные планы</Link>
+                <a href="#pricing" className="text-sm text-muted-foreground hover:text-foreground transition-colors">Бета-тест</a>
               </div>
             </div>
 

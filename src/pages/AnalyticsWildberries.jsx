@@ -76,7 +76,7 @@ export default function AnalyticsWildberries() {
           </Link>
           <Link to="/#pricing">
             <Button className="gradient-bp hover:opacity-90 text-white font-semibold px-6 rounded-full shadow-sm border-0 text-sm">
-              Попробовать бесплатно
+              Подать заявку
             </Button>
           </Link>
         </div>
@@ -103,7 +103,7 @@ export default function AnalyticsWildberries() {
               </p>
               <Link to="/#pricing">
                 <Button size="lg" className="gradient-bp hover:opacity-90 text-white font-bold px-8 py-6 rounded-full shadow-lg border-0">
-                  Попробовать бесплатно
+                  Подать заявку на бета-тест
                   <ArrowRight className="w-5 h-5 ml-2" />
                 </Button>
               </Link>
@@ -267,7 +267,7 @@ export default function AnalyticsWildberries() {
             <p className="text-foreground font-bold text-xl mb-8">С аналитикой — вы управляете бизнесом.</p>
             <Link to="/#pricing">
               <Button size="lg" className="gradient-bp hover:opacity-90 text-white font-bold px-10 py-6 rounded-full shadow-lg border-0">
-                Начать бесплатный триал
+                Подать заявку на бета-тест
                 <ArrowRight className="w-5 h-5 ml-2" />
               </Button>
             </Link>

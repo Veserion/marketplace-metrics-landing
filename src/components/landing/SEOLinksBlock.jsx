@@ -11,7 +11,7 @@ const links = [
 
 export default function SEOLinksBlock() {
   return (
-    <section className="py-16 lg:py-20 bg-white">
+    <section className="py-16 lg:py-20 bg-background">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 24 }}
@@ -43,7 +43,7 @@ export default function SEOLinksBlock() {
             >
               <Link
                 to={link.to}
-                className="group flex flex-col gap-2 p-5 rounded-2xl border border-border bg-background hover:bg-white hover:border-primary/30 hover:shadow-md transition-all h-full"
+                className="group flex flex-col gap-2 p-5 rounded-2xl border border-border bg-white hover:border-primary/30 hover:shadow-md transition-all h-full"
               >
                 <span className="font-bold text-foreground group-hover:text-primary transition-colors">{link.label}</span>
                 <span className="text-sm text-muted-foreground flex-1">{link.desc}</span>

@@ -22,7 +22,7 @@ export default function DemoSection() {
   const [showDemo, setShowDemo] = useState(false);
 
   return (
-    <section className="py-20 lg:py-32 bg-white">
+    <section className="py-20 lg:py-32 bg-background">
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -166,7 +166,7 @@ export default function DemoSection() {
                 <p className="text-sm text-muted-foreground mb-4">Это только часть возможностей сервиса</p>
                 <a href="#pricing">
                   <Button className="bg-primary hover:bg-primary/90 text-white font-bold rounded-full px-8 shadow-md">
-                    Получить полный доступ
+                    Подать заявку на бета-тест
                     <ArrowRight className="w-5 h-5 ml-2" />
                   </Button>
                 </a>

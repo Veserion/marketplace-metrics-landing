@@ -17,7 +17,7 @@ const abcItems = [
 
 export default function WildberriesSection() {
   return (
-    <section className="py-20 lg:py-32 relative overflow-hidden">
+    <section className="py-20 lg:py-32 relative overflow-hidden bg-white">
       {/* Purple gradient background */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[900px] h-[400px] rounded-full bg-gradient-to-r from-purple-300/20 via-indigo-300/20 to-blue-300/20 blur-[100px]" />
@@ -85,15 +85,15 @@ export default function WildberriesSection() {
               <div className="flex-1">
                 <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-amber-50 border border-amber-200 text-amber-700 font-bold text-sm mb-6">
                   <Gift className="w-4 h-4" />
-                  В подарок при подключении WB
+                  Для участников бета-теста
                 </div>
                 <h3 className="font-inter font-extrabold text-2xl sm:text-3xl text-foreground mb-4">
                   ABC-анализ товаров{' '}
-                  <span className="gradient-bp-text">бесплатно</span>
+                  <span className="gradient-bp-text">в раннем доступе</span>
                 </h3>
                 <p className="text-muted-foreground leading-relaxed mb-6 max-w-lg">
-                  Загрузите 1 отчёт из Wildberries — и вы сразу получаете полную аналитику магазина
-                  <strong className="text-foreground"> плюс ABC-анализ</strong> в подарок.
+                  В бете вы сможете загрузить 1 отчёт из Wildberries и получить полную аналитику магазина
+                  <strong className="text-foreground"> плюс ABC-анализ</strong>.
                   Сервис автоматически разобьёт все ваши товары на группы по вкладу в прибыль.
                 </p>
                 <ul className="space-y-2 mb-8">
@@ -111,7 +111,7 @@ export default function WildberriesSection() {
                 </ul>
                 <a href="#pricing">
                   <Button className="gradient-bp hover:opacity-90 text-white font-bold px-8 py-5 rounded-full shadow-lg shadow-purple-300/30 border-0">
-                    Получить ABC-анализ бесплатно
+                    Подать заявку на бета-тест
                     <ArrowRight className="w-5 h-5 ml-2" />
                   </Button>
                 </a>

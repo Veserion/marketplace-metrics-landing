@@ -4,7 +4,7 @@ import { ShieldCheck, Lock } from "lucide-react";
 
 export default function GuaranteeSection() {
   return (
-    <section className="py-16 lg:py-24">
+    <section className="py-16 lg:py-24 bg-background">
       <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col gap-4">
           <motion.div
@@ -17,11 +17,11 @@ export default function GuaranteeSection() {
               <ShieldCheck className="w-8 h-8 text-green-600" />
             </div>
             <div>
-              <h3 className="font-bold text-xl text-foreground mb-2">Гарантия результата</h3>
+              <h3 className="font-bold text-xl text-foreground mb-2">Ранний доступ без оплаты</h3>
               <p className="text-muted-foreground leading-relaxed">
-                Если сервис не помогает контролировать показатели вашего магазина, вы можете
-                отказаться от подписки в любой момент. Мы уверены в качестве продукта,
-                поэтому даём 7 дней бесплатного доступа.
+                Сейчас сервис проходит бета-тест на реальных сценариях продавцов.
+                Мы отбираем участников вручную, чтобы быстро проверять расчёты,
+                собирать обратную связь и улучшать продукт до публичного запуска.
               </p>
             </div>
           </motion.div>

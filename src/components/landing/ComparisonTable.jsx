@@ -12,7 +12,7 @@ const rows = [
   { feature: 'Рекомендации по поставкам', excel: 'bad', metrika: 'good' },
   { feature: 'ABC-анализ товаров', excel: 'bad', metrika: 'good' },
   { feature: 'Возможна API интеграция', excel: 'bad', metrika: 'good' },
-  { feature: 'Стоимость', excel: 'bad-text', excelText: 'Дорого по времени', metrika: 'good-text', metrikaText: '150 ₽/мес' },
+  { feature: 'Доступ на этапе беты', excel: 'bad-text', excelText: 'Дорого по времени', metrika: 'good-text', metrikaText: '3 месяца бесплатно' },
 ];
 
 function ExcelCell({ row }) {
@@ -39,7 +39,7 @@ function MetrikaCell({ row }) {
 
 export default function ComparisonTable() {
   return (
-    <section className="py-20 lg:py-32 bg-white">
+    <section className="py-20 lg:py-32 bg-background">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 30 }}

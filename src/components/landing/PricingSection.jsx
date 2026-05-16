@@ -2,17 +2,23 @@ import React from 'react';
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Check, ArrowRight, Shield, Upload, Zap } from "lucide-react";
-import { Link } from 'react-router-dom';
 
-const features = [
-  'Полная аналитика магазина',
-  'Прибыль по каждому товару',
-  'Убыточные товары',
-  'Динамика продаж',
-  'Рекомендации по поставкам',
-  'Поддержка Ozon и Wildberries',
-  'Учёт налога',
-  'Обновления каждые 1.5 месяца',
+const betaSteps = [
+  {
+    icon: Upload,
+    title: 'Оставьте заявку',
+    text: 'Расскажите, на каких маркетплейсах продаёте и какие отчёты хотите оцифровать в первую очередь.',
+  },
+  {
+    icon: Shield,
+    title: 'Мы отберём участников',
+    text: 'В бета-тест попадут селлеры, чьи сценарии помогут быстрее проверить продукт на реальных данных.',
+  },
+  {
+    icon: Zap,
+    title: 'Получите ранний доступ',
+    text: 'Одобренные участники смогут пользоваться сервисом бесплатно в течение трёх месяцев.',
+  },
 ];
 
 export default function PricingSection() {
@@ -26,30 +32,31 @@ export default function PricingSection() {
           className="text-center mb-12"
         >
           <h2 className="font-inter font-extrabold text-3xl sm:text-4xl lg:text-5xl text-foreground">
-            Два тарифа — один правильный выбор
+            Идёт набор в бета-тест
           </h2>
           <p className="mt-4 text-lg text-muted-foreground">
-            Начните с базового или сразу выбирайте профессиональный
+            Сейчас мы не продаём подписку, а собираем заявки от селлеров,
+            которые хотят первыми проверить аналитику на своих отчётах.
           </p>
         </motion.div>
 
-        {/* Two plan cards */}
+        {/* Beta steps */}
         <div className="grid md:grid-cols-2 gap-6 mb-10 items-stretch">
-          {/* Basic card */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="rounded-2xl bg-background border border-border p-6 flex flex-col"
+            className="rounded-2xl bg-white border border-border p-6 flex flex-col"
           >
             <div className="flex items-center gap-2 mb-3">
               <div className="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center">
                 <Upload className="w-4 h-4 text-primary" />
               </div>
-              <span className="font-bold text-foreground">Базовый</span>
+              <span className="font-bold text-foreground">Что уже проверяем</span>
             </div>
             <p className="text-sm text-muted-foreground leading-relaxed mb-4">
-              Самая необходимая выжимка для понимания отчётности. Загрузка отчётов вручную за период до 1 месяца.
+              В бете фокус на понятной оцифровке отчётов и быстрых ответах по прибыли,
+              убыточным товарам и динамике продаж.
             </p>
             <ul className="space-y-2 flex-1">
               {['Ключевые показатели прибыли', 'Прибыль по каждому товару', 'Убыточные товары', 'Динамика продаж', 'Учёт налога'].map((f, i) => (
@@ -59,34 +66,33 @@ export default function PricingSection() {
                 </li>
               ))}
             </ul>
-            <div className="pt-4 flex items-baseline gap-1 border-t border-border mt-4">
-              <span className="text-4xl font-black gradient-bp-text">550</span>
-              <span className="text-base font-bold text-muted-foreground">₽/мес</span>
+            <div className="pt-4 border-t border-border mt-4">
+              <span className="text-sm font-semibold text-primary">Для одобренных участников — бесплатно 3 месяца</span>
             </div>
           </motion.div>
 
-          {/* Pro card */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="rounded-2xl bg-background border border-primary/20 p-6 flex flex-col relative overflow-hidden"
+            className="rounded-2xl bg-white border border-primary/20 p-6 flex flex-col relative overflow-hidden"
           >
             <div className="absolute top-4 right-4">
-              <span className="text-xs font-semibold bg-amber-50 text-amber-600 border border-amber-100 px-2.5 py-1 rounded-full">Скоро</span>
+              <span className="text-xs font-semibold bg-amber-50 text-amber-600 border border-amber-100 px-2.5 py-1 rounded-full">Ограниченный набор</span>
             </div>
             <div className="flex items-center gap-2 mb-3">
               <div className="w-8 h-8 rounded-lg bg-purple-100 flex items-center justify-center">
                 <Zap className="w-4 h-4 text-purple-600" />
               </div>
-              <span className="font-bold text-foreground">Профессиональный</span>
+              <span className="font-bold text-foreground">Кого берём в бету</span>
             </div>
             <p className="text-sm text-muted-foreground leading-relaxed mb-4">
-              Расширенная аналитика со всеми категориями движения финансов. Подключение через API — без ограничений по периоду.
+              Нужны продавцы Ozon и Wildberries, готовые загрузить реальные отчёты,
+              дать обратную связь и помочь нам довести продукт до публичного запуска.
             </p>
             <ul className="space-y-2 flex-1">
-              {['Всё из базового тарифа', 'Все категории движения финансов', 'Тонкая настройка под ваши задачи', 'Подключение через API', 'Любой период отчётности'].map((f, i) => (
+              {['Есть действующий магазин', 'Есть отчёты за последние периоды', 'Готовность проверить расчёты', 'Обратная связь по интерфейсу', 'Интерес к регулярной аналитике'].map((f, i) => (
                 <li key={i} className="flex items-center gap-2 text-sm text-foreground">
                   <Check className="w-3.5 h-3.5 text-purple-500 flex-shrink-0" />
                   {f}
@@ -94,21 +100,15 @@ export default function PricingSection() {
               ))}
             </ul>
             <div className="pt-4 border-t border-border mt-4">
-              <span className="text-sm text-muted-foreground">Цена — по запросу</span>
+              <span className="text-sm text-muted-foreground">После беты условия подписки объявим отдельно</span>
             </div>
           </motion.div>
-        </div>
-
-        <div className="text-center mb-10">
-          <Link to="/plans" className="text-sm text-primary underline underline-offset-4 hover:opacity-80 transition-opacity font-medium">
-            Подробное сравнение тарифов →
-          </Link>
         </div>
 
         {/* Divider */}
         <div className="flex items-center gap-4 mb-10">
           <div className="h-px flex-1 bg-border" />
-          <span className="text-sm text-muted-foreground font-medium">Начните с базового прямо сейчас</span>
+          <span className="text-sm text-muted-foreground font-medium">Как попасть в бету</span>
           <div className="h-px flex-1 bg-border" />
         </div>
 
@@ -125,26 +125,26 @@ export default function PricingSection() {
             <div className="text-center mb-8">
               <div className="inline-flex items-center gap-2 bg-green-50 text-green-600 border border-green-100 px-4 py-1.5 rounded-full text-sm font-semibold mb-6">
                 <Shield className="w-4 h-4" />
-                7 дней бесплатно
+                3 месяца бесплатно
               </div>
-              <div className="flex items-baseline justify-center gap-1">
-                <span className="text-7xl font-black gradient-bp-text">
-                  550
-                </span>
-                <span className="text-2xl font-bold text-muted-foreground">₽/мес</span>
-              </div>
-              <p className="text-sm text-muted-foreground mt-3">
-                Дешевле чашки кофе — 30 дней полной аналитики
+              <h3 className="font-inter font-extrabold text-3xl text-foreground">
+                Заявка на бета-тест
+              </h3>
+              <p className="text-sm text-muted-foreground mt-3 max-w-sm mx-auto">
+                Мы вручную рассматриваем заявки и открываем доступ тем, кому сервис уже может дать практическую пользу.
               </p>
             </div>
 
-            <div className="space-y-3 mb-8">
-              {features.map((f, i) => (
+            <div className="space-y-4 mb-8">
+              {betaSteps.map((step, i) => (
                 <div key={i} className="flex items-center gap-3">
                   <div className="w-5 h-5 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
-                    <Check className="w-3 h-3 text-primary" />
+                    <step.icon className="w-3 h-3 text-primary" />
                   </div>
-                  <span className="text-foreground text-sm">{f}</span>
+                  <div>
+                    <p className="text-sm font-semibold text-foreground">{step.title}</p>
+                    <p className="text-xs text-muted-foreground leading-relaxed">{step.text}</p>
+                  </div>
                 </div>
               ))}
             </div>
@@ -153,18 +153,12 @@ export default function PricingSection() {
               size="lg"
               className="w-full gradient-bp hover:opacity-90 text-white font-bold text-base py-6 rounded-full shadow-lg shadow-purple-300/30 border-0"
             >
-              Начать бесплатный триал
+              Подать заявку на бета-тест
               <ArrowRight className="w-5 h-5 ml-2" />
             </Button>
 
             <p className="text-xs text-muted-foreground text-center mt-4">
-              После регистрации вы получите доступ через Telegram-бот
-            </p>
-            <p className="text-xs text-muted-foreground text-center mt-2">
-              Переходя в Telegram, вы принимаете{' '}
-              <Link to="/offer" className="underline underline-offset-2 hover:text-foreground transition-colors">условия оферты</Link>
-              {' '}и{' '}
-              <Link to="/privacy" className="underline underline-offset-2 hover:text-foreground transition-colors">политики конфиденциальности</Link>
+              Форму заявки добавим в этот блок следующим шагом
             </p>
           </div>
         </motion.div>

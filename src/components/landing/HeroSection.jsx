@@ -1,7 +1,7 @@
 import React, { useRef, useState } from 'react';
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { ArrowRight, FileSpreadsheet, Plug, Clock, Upload, ImagePlus, X } from "lucide-react";
+import { ArrowRight, FileSpreadsheet, Plug, Clock, ImagePlus, X } from "lucide-react";
 import { motion } from "framer-motion";
 import HeroBackground from './HeroBackground';
 
@@ -26,7 +26,7 @@ export default function HeroSection() {
                 transition={{ duration: 0.6 }}
             >
               <Badge className="mb-6 px-4 py-1.5 bg-primary/10 text-primary border-primary/20 rounded-full font-medium text-sm hover:bg-primary/10">
-                Для продавцов Ozon и Wildberries
+                Набираем участников бета-теста
               </Badge>
             </motion.div>
 
@@ -50,8 +50,8 @@ export default function HeroSection() {
                 transition={{ duration: 0.6, delay: 0.25 }}
                 className="mt-6 text-lg sm:text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed"
             >
-              Загрузите 2 отчёта из Ozon или Wildberries
-              и получите полный контроль прибыли магазина.
+              Подайте заявку на ранний доступ. Одобренные участники получат
+              3 месяца бесплатного доступа к аналитике Ozon и Wildberries.
             </motion.p>
 
             <motion.div
@@ -62,8 +62,8 @@ export default function HeroSection() {
             >
               {[
                 { icon: FileSpreadsheet, text: 'Без сложностей с Excel' },
-                { icon: Plug, text: 'В 2 клика' },
-                { icon: Clock, text: 'Триал & гарантия качества' },
+                { icon: Plug, text: 'Без API на старте' },
+                { icon: Clock, text: '3 месяца бесплатно' },
               ].map((item, i) => (
                   <div key={i} className="flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-border shadow-sm">
                     <item.icon className="w-4 h-4 text-primary" />
@@ -83,7 +83,7 @@ export default function HeroSection() {
                     size="lg"
                     className="gradient-bp hover:opacity-90 text-white font-bold text-base px-8 py-6 rounded-full shadow-lg shadow-purple-300/30 hover:shadow-purple-400/40 transition-all duration-300 border-0"
                 >
-                  Попробовать бесплатно
+                  Подать заявку на бета-тест
                   <ArrowRight className="w-5 h-5 ml-2" />
                 </Button>
               </a>

@@ -1,10 +1,10 @@
 import React from 'react';
 import { motion } from "framer-motion";
-import { Code2, Building2, ShoppingBag, Users } from "lucide-react";
+import { Building2, ShoppingBag, Users } from "lucide-react";
 
 export default function StorySection() {
   return (
-    <section id="story" className="py-20 lg:py-32 relative overflow-hidden">
+    <section id="story" className="py-20 lg:py-32 relative overflow-hidden bg-background">
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute bottom-0 right-0 w-[600px] h-[400px] rounded-full bg-gradient-to-tl from-purple-200/20 via-indigo-200/15 to-transparent blur-[100px]" />
       </div>

@@ -29,8 +29,12 @@ const questions = [
     a: 'Оцифровки обновляются каждые 1.5 месяца. Мы постоянно улучшаем алгоритмы аналитики.',
   },
   {
-    q: 'Можно ли отменить подписку?',
-    a: 'Да, вы можете отказаться от подписки в любой момент. Первые 7 дней полностью бесплатны.',
+    q: 'Сколько стоит участие в бета-тесте?',
+    a: 'Для одобренных участников бета-теста доступ будет бесплатным в течение 3 месяцев. После беты условия подписки объявим отдельно.',
+  },
+  {
+    q: 'Все заявки будут одобрены?',
+    a: 'Нет, на этапе беты мы отбираем участников вручную. Нам важно взять продавцов, чьи реальные сценарии помогут быстрее проверить расчёты и улучшить продукт.',
   },
 ];
 
@@ -59,7 +63,7 @@ export default function FAQSection() {
               <AccordionItem
                 key={i}
                 value={`q-${i}`}
-                className="border border-border rounded-xl px-6 bg-background data-[state=open]:border-primary/30 data-[state=open]:bg-white transition-colors shadow-sm"
+                className="border border-border rounded-xl px-6 bg-white data-[state=open]:border-primary/30 transition-colors shadow-sm"
               >
                 <AccordionTrigger className="text-left font-semibold text-foreground hover:no-underline py-5">
                   {item.q}

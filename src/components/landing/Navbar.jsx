@@ -18,7 +18,7 @@ export default function Navbar() {
     { label: 'Возможности', href: '#features' },
     { label: 'Как работает', href: '#how-it-works' },
     { label: 'История создания', href: '#story' },
-    { label: 'Цена', href: '#pricing' },
+    { label: 'Бета-тест', href: '#pricing' },
     { label: 'FAQ', href: '#faq' },
   ];
 
@@ -52,7 +52,7 @@ export default function Navbar() {
           <div className="hidden md:block">
             <a href="#pricing">
               <Button className="gradient-bp hover:opacity-90 text-white font-semibold px-6 rounded-full shadow-sm border-0">
-                Попробовать бесплатно
+                Подать заявку
               </Button>
             </a>
           </div>
@@ -87,7 +87,7 @@ export default function Navbar() {
               ))}
               <a href="#pricing" onClick={() => setMobileOpen(false)}>
                 <Button className="w-full gradient-bp hover:opacity-90 text-white font-semibold rounded-full mt-2 border-0">
-                  Попробовать бесплатно
+                  Подать заявку
                 </Button>
               </a>
             </div>
