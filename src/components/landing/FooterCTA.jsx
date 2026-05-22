@@ -23,15 +23,15 @@ export default function FooterCTA() {
             <span className="gradient-bp-text">реально зарабатываете</span>
           </h2>
           <p className="text-lg text-muted-foreground mb-10 max-w-xl mx-auto">
-            Подайте заявку на бета-тест. Если заявка будет одобрена,
-            вы получите 3 месяца бесплатного доступа.
+            Переходите в сервис и пользуйтесь Маркетплейс Метрикой бесплатно,
+            пока идёт бета-тест.
           </p>
           <BetaRequestDialog>
             <Button
               size="lg"
               className="gradient-bp hover:opacity-90 text-white font-bold text-lg px-10 py-7 rounded-full shadow-lg shadow-purple-300/30 hover:shadow-purple-400/40 transition-all border-0"
             >
-              Подать заявку на бета-тест
+              Перейти в сервис
               <ArrowRight className="w-5 h-5 ml-2" />
             </Button>
           </BetaRequestDialog>

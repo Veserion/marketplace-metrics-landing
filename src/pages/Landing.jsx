@@ -3,7 +3,6 @@ import Navbar from '../components/landing/Navbar';
 import HeroSection from '../components/landing/HeroSection';
 import PainSection from '../components/landing/PainSection';
 import HowItWorks from '../components/landing/HowItWorks';
-import DemoSection from '../components/landing/DemoSection';
 import InterfaceShowcase from '../components/landing/InterfaceShowcase';
 import FeaturesGrid from '../components/landing/FeaturesGrid';
 import ComparisonTable from '../components/landing/ComparisonTable';
@@ -23,7 +22,6 @@ export default function Landing() {
       <HeroSection />
       <PainSection />
       <HowItWorks />
-      <DemoSection />
       <InterfaceShowcase />
       <FeaturesGrid />
       <WildberriesSection />

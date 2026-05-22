@@ -45,6 +45,17 @@ function formatRussianPhone(value) {
 }
 
 export default function BetaRequestDialog({ children }) {
+  const appUrl = 'https://app.mmetrika.ru';
+  const directLinkChild = React.isValidElement(children)
+    ? React.cloneElement(
+        children,
+        { asChild: true },
+        <a href={appUrl}>{children.props.children}</a>
+      )
+    : children;
+
+  return directLinkChild;
+
   const [open, setOpen] = useState(false);
   const [form, setForm] = useState(initialForm);
   const [status, setStatus] = useState('idle');

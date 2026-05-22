@@ -26,7 +26,7 @@ const withoutAnalytics = [
 ];
 
 const advantages = [
-  { num: '1', title: 'Бета-доступ', text: 'Одобренные участники получат 3 месяца бесплатного доступа и смогут повлиять на развитие продукта.' },
+  { num: '1', title: 'Открытый бета-доступ', text: 'Сейчас сервисом можно пользоваться бесплатно во время бета-теста без заявки и ожидания одобрения.' },
   { num: '2', title: 'Только нужные данные', text: 'Мы убрали всё лишнее. Только ключевые показатели, которые реально влияют на прибыль.' },
   { num: '3', title: 'Простота использования', text: 'Не нужно разбираться в Excel, формулах и сложных системах.' },
   { num: '4', title: 'Интуитивный интерфейс', text: 'Понятно с первого взгляда — даже если вы новичок.' },
@@ -57,7 +57,7 @@ export default function AnalyticsMarketplaces() {
           </Link>
           <BetaRequestDialog>
             <Button className="gradient-bp hover:opacity-90 text-white font-semibold px-6 rounded-full shadow-sm border-0 text-sm">
-              Подать заявку
+              Войти в сервис
             </Button>
           </BetaRequestDialog>
         </div>
@@ -84,7 +84,7 @@ export default function AnalyticsMarketplaces() {
               </p>
               <BetaRequestDialog>
                 <Button size="lg" className="gradient-bp hover:opacity-90 text-white font-bold px-8 py-6 rounded-full shadow-lg border-0">
-                  Подать заявку на бета-тест
+                  Перейти в сервис
                   <ArrowRight className="w-5 h-5 ml-2" />
                 </Button>
               </BetaRequestDialog>
@@ -223,7 +223,7 @@ export default function AnalyticsMarketplaces() {
             </p>
             <BetaRequestDialog>
               <Button size="lg" className="gradient-bp hover:opacity-90 text-white font-bold px-10 py-6 rounded-full shadow-lg border-0">
-                Подать заявку на бета-тест
+                Перейти в сервис
                 <ArrowRight className="w-5 h-5 ml-2" />
               </Button>
             </BetaRequestDialog>
