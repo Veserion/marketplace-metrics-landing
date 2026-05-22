@@ -7,18 +7,18 @@ import BetaRequestDialog from './BetaRequestDialog';
 const betaSteps = [
   {
     icon: Upload,
-    title: 'Перейдите в сервис',
-    text: 'Откройте приложение и начните работу без ожидания ручного одобрения.',
+    title: 'Оставьте заявку',
+    text: 'Расскажите, на каких маркетплейсах продаёте и какие отчёты хотите оцифровать в первую очередь.',
   },
   {
     icon: Shield,
-    title: 'Загрузите отчёты',
-    text: 'Скачайте стандартные отчёты из кабинета Ozon или Wildberries и загрузите их в сервис.',
+    title: 'Мы отберём участников',
+    text: 'В бета-тест попадут селлеры, чьи сценарии помогут быстрее проверить продукт на реальных данных.',
   },
   {
     icon: Zap,
-    title: 'Пользуйтесь бесплатно',
-    text: 'Во время бета-тестирования доступ к сервису открыт бесплатно для всех пользователей.',
+    title: 'Получите ранний доступ',
+    text: 'Одобренные участники смогут пользоваться сервисом бесплатно во время бета-теста и после релиза сервиса в течение трёх месяцев!',
   },
 ];
 
@@ -33,11 +33,11 @@ export default function PricingSection() {
           className="text-center mb-12"
         >
           <h2 className="font-inter font-extrabold text-3xl sm:text-4xl lg:text-5xl text-foreground">
-            Бесплатный доступ на время бета-теста
+            Идёт набор в бета-тест
           </h2>
           <p className="mt-4 text-lg text-muted-foreground">
-            Сейчас мы не продаём подписку и не отбираем участников вручную.
-            Переходите в сервис и проверяйте аналитику на своих отчётах бесплатно.
+            Сейчас мы не продаём подписку, а собираем заявки от селлеров,
+            которые хотят первыми проверить аналитику на своих отчётах.
           </p>
         </motion.div>
 
@@ -77,17 +77,17 @@ export default function PricingSection() {
             className="rounded-2xl bg-white border border-primary/20 p-6 flex flex-col relative overflow-hidden"
           >
             <div className="absolute top-4 right-4">
-              <span className="text-xs font-semibold bg-green-50 text-green-600 border border-green-100 px-2.5 py-1 rounded-full">Открытая бета</span>
+              <span className="text-xs font-semibold bg-amber-50 text-amber-600 border border-amber-100 px-2.5 py-1 rounded-full">Ограниченный набор</span>
             </div>
             <div className="flex items-center gap-2 mb-3">
               <div className="w-8 h-8 rounded-lg bg-purple-100 flex items-center justify-center">
                 <Zap className="w-4 h-4 text-purple-600" />
               </div>
-              <span className="font-bold text-foreground">Кому подходит бета</span>
+              <span className="font-bold text-foreground">Кого берём в бету</span>
             </div>
             <p className="text-sm text-muted-foreground leading-relaxed mb-4">
-              Подойдёт продавцам Ozon и Wildberries, которые хотят быстро увидеть прибыль,
-              расходы и динамику продаж без ручной сборки таблиц.
+              Нужны продавцы Ozon и Wildberries, готовые загрузить реальные отчёты,
+              дать обратную связь и помочь нам довести продукт до публичного запуска.
             </p>
             <ul className="space-y-2 flex-1">
               {['Есть действующий магазин', 'Есть отчёты за последние периоды', 'Готовность проверить расчёты', 'Обратная связь по интерфейсу', 'Интерес к регулярной аналитике'].map((f, i) => (
@@ -103,7 +103,7 @@ export default function PricingSection() {
         {/* Divider */}
         <div className="flex items-center gap-4 mb-10">
           <div className="h-px flex-1 bg-border" />
-          <span className="text-sm text-muted-foreground font-medium">Как начать пользоваться</span>
+          <span className="text-sm text-muted-foreground font-medium">Как попасть в бету</span>
           <div className="h-px flex-1 bg-border" />
         </div>
 
@@ -120,13 +120,13 @@ export default function PricingSection() {
             <div className="text-center mb-8">
               <div className="inline-flex items-center gap-2 bg-green-50 text-green-600 border border-green-100 px-4 py-1.5 rounded-full text-sm font-semibold mb-6">
                 <Shield className="w-4 h-4" />
-                Бесплатно на время беты
+                3 месяца бесплатно в подарок
               </div>
               <h3 className="font-inter font-extrabold text-3xl text-foreground">
-                Открытый бета-доступ
+                Заявка на бета-тест
               </h3>
               <p className="text-sm text-muted-foreground mt-3 max-w-sm mx-auto">
-                Сервис открыт: вы можете сразу загрузить отчёты и проверить расчёты бесплатно.
+                Мы вручную рассматриваем заявки и открываем доступ тем, кому сервис уже может дать практическую пользу.
               </p>
             </div>
 
@@ -149,7 +149,7 @@ export default function PricingSection() {
                 size="lg"
                 className="w-full gradient-bp hover:opacity-90 text-white font-bold text-base py-6 rounded-full shadow-lg shadow-purple-300/30 border-0"
               >
-                Перейти в сервис
+                Подать заявку на бета-тест
                 <ArrowRight className="w-5 h-5 ml-2" />
               </Button>
             </BetaRequestDialog>

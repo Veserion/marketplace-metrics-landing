@@ -53,7 +53,7 @@ export default function Navbar() {
           <div className="hidden md:block">
             <BetaRequestDialog>
               <Button className="gradient-bp hover:opacity-90 text-white font-semibold px-6 rounded-full shadow-sm border-0">
-                Войти в сервис
+                Подать заявку
               </Button>
             </BetaRequestDialog>
           </div>
@@ -91,7 +91,7 @@ export default function Navbar() {
                   className="w-full gradient-bp hover:opacity-90 text-white font-semibold rounded-full mt-2 border-0"
                   onClick={() => setMobileOpen(false)}
                 >
-                  Войти в сервис
+                  Подать заявку
                 </Button>
               </BetaRequestDialog>
             </div>

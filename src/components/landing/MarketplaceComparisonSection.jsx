@@ -15,7 +15,7 @@ const platforms = [
     marketplaceHint: 'Скриншот из кабинета WB · рекомендуемый размер 700×450',
     ourHint: 'Наш отчёт по WB · рекомендуемый размер 700×450',
     marketplaceSrc: '/screenshots/wildberries_raw.png',
-    ourSrc: '/screenshots/wb_wide.png',
+    ourSrc: '/screenshots/wildberries-metrika-analytics.png',
   },
   {
     name: 'Ozon',
@@ -28,7 +28,7 @@ const platforms = [
     marketplaceHint: 'Скриншот из кабинета Ozon · рекомендуемый размер 700×450',
     ourHint: 'Наш отчёт по Ozon · рекомендуемый размер 700×450',
     marketplaceSrc: '/screenshots/ozon_raw.png',
-    ourSrc: '/screenshots/ozon_wide.png',
+    ourSrc: '/screenshots/ozon-metrika-analytics.png',
   },
 ];
 

@@ -86,7 +86,7 @@ export default function WildberriesSection() {
               <div className="flex-1">
                 <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-amber-50 border border-amber-200 text-amber-700 font-bold text-sm mb-6">
                   <Gift className="w-4 h-4" />
-                  Доступно в бета-тесте
+                  Для участников бета-теста
                 </div>
                 <h3 className="font-inter font-extrabold text-2xl sm:text-3xl text-foreground mb-4">
                   ABC-анализ товаров{' '}
@@ -112,7 +112,7 @@ export default function WildberriesSection() {
                 </ul>
                 <BetaRequestDialog>
                   <Button className="gradient-bp hover:opacity-90 text-white font-bold px-8 py-5 rounded-full shadow-lg shadow-purple-300/30 border-0">
-                    Перейти в сервис
+                    Подать заявку на бета-тест
                     <ArrowRight className="w-5 h-5 ml-2" />
                   </Button>
                 </BetaRequestDialog>
