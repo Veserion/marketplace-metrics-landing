@@ -139,7 +139,7 @@ export default function Plans() {
                   src="/screenshots/basic-plan-interface.png"
                   label="Скриншот базового тарифа"
                   hint="Загрузите скриншот интерфейса базового тарифа · 1200×700"
-                  className="min-h-[200px] rounded-none border-0 shadow-none"
+                  className="min-h-[200px] rounded-none shadow-none"
                 />
               </div>
             </motion.div>
@@ -201,7 +201,7 @@ export default function Plans() {
                   src="/screenshots/pro-plan-interface.png"
                   label="Скриншот профессионального тарифа"
                   hint="Загрузите скриншот интерфейса профессионального тарифа · 1200×700"
-                  className="min-h-[200px] rounded-none border-0 shadow-none"
+                  className="min-h-[200px] rounded-none shadow-none"
                 />
               </div>
             </motion.div>

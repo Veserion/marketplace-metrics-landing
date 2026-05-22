@@ -19,7 +19,7 @@ export default function ImageUploadBox({ src, label, hint, className = '', image
   };
 
   return (
-    <div className={`relative rounded-2xl overflow-hidden border-2 border-dashed border-border bg-white group ${className}`}
+    <div className={`relative rounded-2xl overflow-hidden border-2 border-primary/30 bg-white group ${className}`}
       onDragOver={(e) => e.preventDefault()}
       onDrop={onDrop}
     >

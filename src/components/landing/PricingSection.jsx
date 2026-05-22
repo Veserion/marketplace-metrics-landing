@@ -18,7 +18,7 @@ const betaSteps = [
   {
     icon: Zap,
     title: 'Получите ранний доступ',
-    text: 'Одобренные участники смогут пользоваться сервисом бесплатно в течение трёх месяцев.',
+    text: 'Одобренные участники смогут пользоваться сервисом бесплатно во время бета-теста и после релиза сервиса в течение трёх месяцев!',
   },
 ];
 
@@ -67,9 +67,6 @@ export default function PricingSection() {
                 </li>
               ))}
             </ul>
-            <div className="pt-4 border-t border-border mt-4">
-              <span className="text-sm font-semibold text-primary">Для одобренных участников — бесплатно 3 месяца</span>
-            </div>
           </motion.div>
 
           <motion.div
@@ -100,9 +97,6 @@ export default function PricingSection() {
                 </li>
               ))}
             </ul>
-            <div className="pt-4 border-t border-border mt-4">
-              <span className="text-sm text-muted-foreground">После беты условия подписки объявим отдельно</span>
-            </div>
           </motion.div>
         </div>
 
@@ -126,7 +120,7 @@ export default function PricingSection() {
             <div className="text-center mb-8">
               <div className="inline-flex items-center gap-2 bg-green-50 text-green-600 border border-green-100 px-4 py-1.5 rounded-full text-sm font-semibold mb-6">
                 <Shield className="w-4 h-4" />
-                3 месяца бесплатно
+                3 месяца бесплатно в подарок
               </div>
               <h3 className="font-inter font-extrabold text-3xl text-foreground">
                 Заявка на бета-тест

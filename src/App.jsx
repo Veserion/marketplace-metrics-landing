@@ -11,6 +11,7 @@ import Privacy from './pages/legal/Privacy';
 import PersonalData from './pages/legal/PersonalData';
 import Refund from './pages/legal/Refund';
 import Terms from './pages/legal/Terms';
+import NotFound from './pages/NotFound';
 // Add page imports here
 
 const AuthenticatedApp = () => {
@@ -27,6 +28,7 @@ const AuthenticatedApp = () => {
       <Route path="/refund" element={<Refund />} />
       <Route path="/terms" element={<Terms />} />
       <Route path="/plans" element={<Navigate to="/#pricing" replace />} />
+      <Route path="*" element={<NotFound />} />
     </Routes>
   );
 };

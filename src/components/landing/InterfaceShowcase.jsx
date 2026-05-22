@@ -4,7 +4,9 @@ import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import ImageUploadBox from './ImageUploadBox';
 
 const screens = [
+  { id: 'upload', label: 'Загрузка', img: '/screenshots/zagruzka.png' },
   { id: 'dashboard', label: 'Общий дашборд', img: '/screenshots/dashboard_wb_full.png' },
+  { id: 'details', label: 'Детализация расчетов', img: '/screenshots/detalizaciya-raschetov.png' },
   { id: 'products', label: 'Структура выручки', img: '/screenshots/unit_total.png' },
   { id: 'losses', label: 'Убыточные товары', img: '/screenshots/ubitochnie.png' },
   { id: 'dynamics', label: 'Динамика продаж', img: '/screenshots/dinamika.png' },
@@ -60,7 +62,7 @@ export default function InterfaceShowcase() {
               src={currentScreen.img}
               label={currentScreen.label}
               hint="Скриншот интерфейса · рекомендуемый размер 1200×700"
-              className="min-h-[320px] rounded-none border-0 shadow-none"
+              className="min-h-[320px] rounded-none shadow-none"
             />
           </div>
         </motion.div>
