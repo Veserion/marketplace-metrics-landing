@@ -88,7 +88,7 @@ export default function MarketplaceComparisonSection() {
                           src={platform.marketplaceSrc}
                           label={platform.marketplaceLabel}
                           hint={platform.marketplaceHint}
-                          className="min-h-[260px]"
+                          className="md:min-h-[260px]"
                       />
                       <ul className="mt-3 space-y-1.5">
                         {['Базовые графики продаж', 'Нет расчёта прибыли', 'Нет анализа убыточных товаров'].map((con, i) => (
@@ -117,7 +117,7 @@ export default function MarketplaceComparisonSection() {
                           src={platform.ourSrc}
                           label={platform.ourLabel}
                           hint={platform.ourHint}
-                          className="min-h-[260px] border-primary/40"
+                          className="border-primary/40 md:min-h-[260px]"
                       />
                       <ul className="mt-3 space-y-1.5">
                         {advantages.map((adv, i) => (

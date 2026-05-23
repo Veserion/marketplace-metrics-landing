@@ -4,8 +4,8 @@ import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import ImageUploadBox from './ImageUploadBox';
 
 const screens = [
-  { id: 'upload', label: 'Загрузка', img: '/screenshots/zagruzka.png' },
   { id: 'dashboard', label: 'Общий дашборд', img: '/screenshots/dashboard_wb_full.png' },
+  { id: 'upload', label: 'Загрузка', img: '/screenshots/zagruzka.png' },
   { id: 'details', label: 'Детализация расчетов', img: '/screenshots/detalizaciya-raschetov.png' },
   { id: 'products', label: 'Структура выручки', img: '/screenshots/unit_total.png' },
   { id: 'losses', label: 'Убыточные товары', img: '/screenshots/ubitochnie.png' },
@@ -34,13 +34,13 @@ export default function InterfaceShowcase() {
         </motion.div>
 
         <div className="flex justify-center mb-8">
-          <Tabs value={active} onValueChange={setActive}>
-            <TabsList className="bg-white border border-border shadow-sm rounded-full p-1 flex-wrap h-auto gap-1">
+          <Tabs value={active} onValueChange={setActive} className="w-full sm:w-auto">
+            <TabsList className="grid h-auto w-full grid-cols-2 gap-1.5 rounded-2xl border border-border bg-white p-1.5 shadow-sm sm:inline-flex sm:w-auto sm:grid-cols-none sm:rounded-full sm:p-1">
               {screens.map(s => (
                 <TabsTrigger
                   key={s.id}
                   value={s.id}
-                  className="rounded-full px-4 py-2 text-sm data-[state=active]:bg-primary data-[state=active]:text-white data-[state=active]:shadow-sm"
+                  className="min-h-10 whitespace-normal rounded-xl px-2 py-2 text-center text-sm leading-tight data-[state=active]:bg-primary data-[state=active]:text-white data-[state=active]:shadow-sm sm:min-h-0 sm:whitespace-nowrap sm:rounded-full sm:px-4"
                 >
                   {s.label}
                 </TabsTrigger>
@@ -62,7 +62,7 @@ export default function InterfaceShowcase() {
               src={currentScreen.img}
               label={currentScreen.label}
               hint="Скриншот интерфейса · рекомендуемый размер 1200×700"
-              className="min-h-[320px] rounded-none shadow-none"
+              className="rounded-none shadow-none md:min-h-[320px]"
             />
           </div>
         </motion.div>

@@ -96,7 +96,7 @@ export default function HeroSection() {
               src="/screenshots/dashboard_wb_full.png"
               label="Скриншот дашборда"
               hint="PNG, JPG — рекомендуемый размер 1200×700"
-              className="relative rounded-2xl border-primary/30 shadow-2xl shadow-primary/10 min-h-[300px]"
+              className="relative rounded-2xl border-primary/30 shadow-2xl shadow-primary/10 md:min-h-[300px]"
               imageClassName="h-auto"
             />
           </motion.div>
