@@ -7,7 +7,7 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 
-const questions = [
+export const faqQuestions = [
   {
     q: 'Нужно ли разбираться в Excel?',
     a: 'Нет, совсем не нужно. Вы просто загружаете отчёты из маркетплейса, а сервис автоматически строит аналитику. Никаких формул и таблиц.',
@@ -59,7 +59,7 @@ export default function FAQSection() {
           viewport={{ once: true }}
         >
           <Accordion type="single" collapsible className="space-y-3">
-            {questions.map((item, i) => (
+            {faqQuestions.map((item, i) => (
               <AccordionItem
                 key={i}
                 value={`q-${i}`}

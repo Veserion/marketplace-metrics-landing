@@ -7,6 +7,7 @@ import Logo from '@/components/landing/Logo';
 import SiteFooter from '@/components/landing/SiteFooter';
 import BetaRequestDialog from '@/components/landing/BetaRequestDialog';
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, Cell } from 'recharts';
+import { setPageSeo } from '@/lib/seo';
 
 const fadeUp = { hidden: { opacity: 0, y: 28 }, visible: { opacity: 1, y: 0, transition: { duration: 0.55 } } };
 
@@ -39,10 +40,12 @@ const results = [
 
 export default function AnalyticsOzon() {
   useEffect(() => {
-    document.title = 'Аналитика Ozon — контроль прибыли и продаж | Маркетплейс Метрика';
-    let desc = document.querySelector('meta[name="description"]');
-    if (!desc) { desc = document.createElement('meta'); desc.name = 'description'; document.head.appendChild(desc); }
-    desc.setAttribute('content', 'Аналитика Ozon для селлеров. Поймите прибыль и расходы без сложных отчётов и Excel.');
+    setPageSeo({
+      title: 'Аналитика Ozon — контроль прибыли и продаж | Маркетплейс Метрика',
+      description: 'Аналитика Ozon для селлеров. Поймите прибыль и расходы без сложных отчётов и Excel.',
+      path: '/analytics-ozon',
+      type: 'article',
+    });
   }, []);
 
   return (

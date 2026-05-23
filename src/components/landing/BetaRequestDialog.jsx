@@ -13,6 +13,7 @@ import {
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Textarea } from '@/components/ui/textarea';
+import { trackEvent } from '@/lib/analytics';
 
 const initialForm = {
   name: '',
@@ -61,6 +62,9 @@ export default function BetaRequestDialog({ children }) {
 
   const handleOpenChange = (nextOpen) => {
     setOpen(nextOpen);
+    if (nextOpen) {
+      trackEvent('beta_request_open');
+    }
     if (!nextOpen) return;
     setStatus('idle');
     setError('');
@@ -70,6 +74,7 @@ export default function BetaRequestDialog({ children }) {
     event.preventDefault();
     setStatus('loading');
     setError('');
+    trackEvent('beta_request_submit_attempt');
 
     try {
       const response = await fetch(`${API_BASE_URL}/beta-requests`, {
@@ -92,9 +97,11 @@ export default function BetaRequestDialog({ children }) {
 
       setStatus('success');
       setForm(initialForm);
+      trackEvent('beta_request_submit_success');
     } catch {
       setStatus('error');
       setError('Не удалось отправить заявку. Проверьте данные и попробуйте ещё раз.');
+      trackEvent('beta_request_submit_error');
     }
   };
 

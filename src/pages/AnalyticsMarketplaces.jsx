@@ -6,6 +6,7 @@ import { Button } from '@/components/ui/button';
 import Logo from '@/components/landing/Logo';
 import SiteFooter from '@/components/landing/SiteFooter';
 import BetaRequestDialog from '@/components/landing/BetaRequestDialog';
+import { setPageSeo } from '@/lib/seo';
 
 const fadeUp = { hidden: { opacity: 0, y: 28 }, visible: { opacity: 1, y: 0, transition: { duration: 0.55 } } };
 
@@ -40,10 +41,12 @@ const results = [
 
 export default function AnalyticsMarketplaces() {
   useEffect(() => {
-    document.title = 'Аналитика маркетплейсов — контроль прибыли и продаж | Маркетплейс Метрика';
-    let desc = document.querySelector('meta[name="description"]');
-    if (!desc) { desc = document.createElement('meta'); desc.name = 'description'; document.head.appendChild(desc); }
-    desc.setAttribute('content', 'Аналитика маркетплейсов для Ozon и Wildberries. Поймите прибыль, расходы и эффективность товаров без сложных Excel-таблиц.');
+    setPageSeo({
+      title: 'Аналитика маркетплейсов — контроль прибыли и продаж | Маркетплейс Метрика',
+      description: 'Аналитика маркетплейсов для Ozon и Wildberries. Поймите прибыль, расходы и эффективность товаров без сложных Excel-таблиц.',
+      path: '/analytics-marketplaces',
+      type: 'article',
+    });
   }, []);
 
   return (

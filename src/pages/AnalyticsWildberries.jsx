@@ -7,6 +7,7 @@ import Logo from '@/components/landing/Logo';
 import SiteFooter from '@/components/landing/SiteFooter';
 import BetaRequestDialog from '@/components/landing/BetaRequestDialog';
 import { AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
+import { setPageSeo } from '@/lib/seo';
 
 const fadeUp = { hidden: { opacity: 0, y: 28 }, visible: { opacity: 1, y: 0, transition: { duration: 0.55 } } };
 
@@ -60,10 +61,12 @@ const results = [
 
 export default function AnalyticsWildberries() {
   useEffect(() => {
-    document.title = 'Аналитика Wildberries — как понять прибыль магазина | Маркетплейс Метрика';
-    let desc = document.querySelector('meta[name="description"]');
-    if (!desc) { desc = document.createElement('meta'); desc.name = 'description'; document.head.appendChild(desc); }
-    desc.setAttribute('content', 'Аналитика Wildberries без Excel. Узнайте прибыль, расходы и эффективность товаров за 1 минуту.');
+    setPageSeo({
+      title: 'Аналитика Wildberries — как понять прибыль магазина | Маркетплейс Метрика',
+      description: 'Аналитика Wildberries без Excel. Узнайте прибыль, расходы и эффективность товаров за 1 минуту.',
+      path: '/analytics-wildberries',
+      type: 'article',
+    });
   }, []);
 
   return (

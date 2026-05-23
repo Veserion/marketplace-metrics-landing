@@ -1,10 +1,20 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { AlertTriangle, ArrowLeft, Home, LifeBuoy } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { setPageSeo } from '@/lib/seo';
 
 export default function NotFound() {
   const location = useLocation();
+
+  useEffect(() => {
+    setPageSeo({
+      title: 'Страница не найдена | Маркетплейс Метрика',
+      description: 'Страница не найдена. Вернитесь на главную страницу Маркетплейс Метрики или откройте разделы аналитики.',
+      path: location.pathname,
+      noindex: true,
+    });
+  }, [location.pathname]);
 
   return (
     <div className="min-h-screen bg-background text-foreground">
