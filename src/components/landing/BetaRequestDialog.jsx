@@ -12,15 +12,21 @@ import {
 } from '@/components/ui/dialog';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
-import { Textarea } from '@/components/ui/textarea';
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from '@/components/ui/select';
 import { trackEvent } from '@/lib/analytics';
 
 const initialForm = {
   name: '',
   email: '',
   phone: '',
-  company: '',
-  message: '',
+  categories: '',
+  sellerTurnoverRange: '',
   website: '',
 };
 
@@ -60,6 +66,10 @@ export default function BetaRequestDialog({ children }) {
     setForm((current) => ({ ...current, phone }));
   };
 
+  const updateSelectField = (field) => (value) => {
+    setForm((current) => ({ ...current, [field]: value }));
+  };
+
   const handleOpenChange = (nextOpen) => {
     setOpen(nextOpen);
     if (nextOpen) {
@@ -72,6 +82,12 @@ export default function BetaRequestDialog({ children }) {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
+    if (!form.sellerTurnoverRange) {
+      setStatus('error');
+      setError('Выберите диапазон оборота.');
+      return;
+    }
+
     setStatus('loading');
     setError('');
     trackEvent('beta_request_submit_attempt');
@@ -84,8 +100,9 @@ export default function BetaRequestDialog({ children }) {
           name: form.name,
           email: form.email,
           phone: form.phone,
-          company: form.company,
-          message: form.message,
+          company: form.categories,
+          categories: form.categories,
+          sellerTurnoverRange: form.sellerTurnoverRange,
           source: window.location.href,
           website: form.website,
         }),
@@ -191,27 +208,31 @@ export default function BetaRequestDialog({ children }) {
               </div>
 
               <div className="grid gap-2">
-                <Label htmlFor="beta-company">Компания или магазин</Label>
+                <Label htmlFor="beta-categories">В каких категориях торгуете</Label>
                 <Input
-                  id="beta-company"
-                  name="company"
-                  value={form.company}
-                  onChange={updateField('company')}
-                  placeholder="Название магазина или компании"
+                  id="beta-categories"
+                  name="categories"
+                  value={form.categories}
+                  onChange={updateField('categories')}
+                  placeholder="Например: одежда, товары для дома"
                 />
               </div>
 
               <div className="grid gap-2">
-                <Label htmlFor="beta-message">Комментарий</Label>
-                <Textarea
-                  id="beta-message"
-                  name="message"
-                  value={form.message}
-                  onChange={updateField('message')}
-                  placeholder="На каких маркетплейсах продаёте и что заинтересовало"
-                  rows={4}
-                  required
-                />
+                <Label htmlFor="beta-turnover">Ваш среднемесячный оборот</Label>
+                <Select
+                  value={form.sellerTurnoverRange}
+                  onValueChange={updateSelectField('sellerTurnoverRange')}
+                >
+                  <SelectTrigger id="beta-turnover" className="h-10">
+                    <SelectValue placeholder="Выберите диапазон" />
+                  </SelectTrigger>
+                  <SelectContent>
+                    <SelectItem value="0-1m">0 — 1 млн</SelectItem>
+                    <SelectItem value="1-5m">1 — 5 млн</SelectItem>
+                    <SelectItem value="5m-plus">5 млн +</SelectItem>
+                  </SelectContent>
+                </Select>
               </div>
 
               {status === 'error' && (
