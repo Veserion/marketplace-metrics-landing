@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import Logo from './Logo';
 import { Link } from 'react-router-dom';
-import BetaRequestDialog from './BetaRequestDialog';
+import { APP_URL } from '@/lib/links';
 
 export default function FooterCTA() {
   return (
@@ -23,18 +23,19 @@ export default function FooterCTA() {
             <span className="gradient-bp-text">реально зарабатываете</span>
           </h2>
           <p className="text-lg text-muted-foreground mb-10 max-w-xl mx-auto">
-            Подайте заявку на бета-тест. Если заявка будет одобрена,
-            вы получите 3 месяца бесплатного доступа.
+            Перейдите в сервис, загрузите отчёты вручную и получите аналитику бесплатно.
+            Заявка и ручное одобрение больше не нужны.
           </p>
-          <BetaRequestDialog>
-            <Button
-              size="lg"
-              className="gradient-bp hover:opacity-90 text-white font-bold text-lg px-10 py-7 rounded-full shadow-lg shadow-purple-300/30 hover:shadow-purple-400/40 transition-all border-0"
-            >
-              Подать заявку на бета-тест
+          <Button
+            asChild
+            size="lg"
+            className="gradient-bp hover:opacity-90 text-white font-bold text-lg px-10 py-7 rounded-full shadow-lg shadow-purple-300/30 hover:shadow-purple-400/40 transition-all border-0"
+          >
+            <a href={APP_URL}>
+              Перейти в сервис
               <ArrowRight className="w-5 h-5 ml-2" />
-            </Button>
-          </BetaRequestDialog>
+            </a>
+          </Button>
         </motion.div>
       </div>
 
@@ -62,7 +63,7 @@ export default function FooterCTA() {
                 <Link to="/analytics-marketplaces" className="text-sm text-muted-foreground hover:text-foreground transition-colors">Аналитика маркетплейсов</Link>
                 <Link to="/analytics-wildberries" className="text-sm text-muted-foreground hover:text-foreground transition-colors">Аналитика Wildberries</Link>
                 <Link to="/analytics-ozon" className="text-sm text-muted-foreground hover:text-foreground transition-colors">Аналитика Ozon</Link>
-                <a href="#pricing" className="text-sm text-muted-foreground hover:text-foreground transition-colors">Бета-тест</a>
+                <a href="#pricing" className="text-sm text-muted-foreground hover:text-foreground transition-colors">Бесплатный доступ</a>
               </div>
             </div>
 

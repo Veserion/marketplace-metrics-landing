@@ -5,8 +5,8 @@ import { ArrowRight, CheckCircle2, XCircle } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import Logo from '@/components/landing/Logo';
 import SiteFooter from '@/components/landing/SiteFooter';
-import BetaRequestDialog from '@/components/landing/BetaRequestDialog';
 import { AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
+import { APP_URL } from '@/lib/links';
 import { setPageSeo } from '@/lib/seo';
 
 const fadeUp = { hidden: { opacity: 0, y: 28 }, visible: { opacity: 1, y: 0, transition: { duration: 0.55 } } };
@@ -78,11 +78,9 @@ export default function AnalyticsWildberries() {
             <Logo className="w-8 h-8" />
             <span className="font-inter font-bold text-base text-foreground">Маркетплейс Метрика</span>
           </Link>
-          <BetaRequestDialog>
-            <Button className="gradient-bp hover:opacity-90 text-white font-semibold px-6 rounded-full shadow-sm border-0 text-sm">
-              Подать заявку
-            </Button>
-          </BetaRequestDialog>
+          <Button asChild className="gradient-bp hover:opacity-90 text-white font-semibold px-6 rounded-full shadow-sm border-0 text-sm">
+            <a href={APP_URL}>Войти в сервис</a>
+          </Button>
         </div>
       </nav>
 
@@ -105,12 +103,12 @@ export default function AnalyticsWildberries() {
               <p className="text-lg sm:text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed mb-10">
                 Wildberries предоставляет селлерам большое количество отчётов: по продажам, начислениям, возвратам, логистике и комиссиям. Но на практике работать с ними непросто.
               </p>
-              <BetaRequestDialog>
-                <Button size="lg" className="gradient-bp hover:opacity-90 text-white font-bold px-8 py-6 rounded-full shadow-lg border-0">
-                  Подать заявку на бета-тест
+              <Button asChild size="lg" className="gradient-bp hover:opacity-90 text-white font-bold px-8 py-6 rounded-full shadow-lg border-0">
+                <a href={APP_URL}>
+                  Перейти в сервис
                   <ArrowRight className="w-5 h-5 ml-2" />
-                </Button>
-              </BetaRequestDialog>
+                </a>
+              </Button>
             </motion.div>
           </div>
         </section>
@@ -269,12 +267,12 @@ export default function AnalyticsWildberries() {
           <motion.div variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }}>
             <p className="text-muted-foreground text-lg mb-2">Без аналитики Wildberries вы работаете вслепую.</p>
             <p className="text-foreground font-bold text-xl mb-8">С аналитикой — вы управляете бизнесом.</p>
-            <BetaRequestDialog>
-              <Button size="lg" className="gradient-bp hover:opacity-90 text-white font-bold px-10 py-6 rounded-full shadow-lg border-0">
-                Подать заявку на бета-тест
+            <Button asChild size="lg" className="gradient-bp hover:opacity-90 text-white font-bold px-10 py-6 rounded-full shadow-lg border-0">
+              <a href={APP_URL}>
+                Перейти в сервис
                 <ArrowRight className="w-5 h-5 ml-2" />
-              </Button>
-            </BetaRequestDialog>
+              </a>
+            </Button>
           </motion.div>
         </section>
 

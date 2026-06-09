@@ -17,10 +17,10 @@ export default function GuaranteeSection() {
               <ShieldCheck className="w-8 h-8 text-green-600" />
             </div>
             <div>
-              <h3 className="font-bold text-xl text-foreground mb-2">Ранний доступ без оплаты</h3>
+              <h3 className="font-bold text-xl text-foreground mb-2">Бесплатный доступ без заявки</h3>
               <p className="text-muted-foreground leading-relaxed">
-                Сейчас сервис проходит бета-тест на реальных сценариях продавцов.
-                Мы отбираем участников вручную, чтобы собрать обратную связь про работу сервиса и сделать его максимально комфортным и функциональным для вас!
+                Сейчас сервис бесплатно анализирует отчёты, которые вы загружаете вручную.
+                Можно сразу перейти в приложение и проверить расчёты на своих данных.
               </p>
             </div>
           </motion.div>

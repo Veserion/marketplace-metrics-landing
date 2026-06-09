@@ -2,7 +2,7 @@ export const SITE_URL = 'https://mmetrika.ru';
 
 export const DEFAULT_SEO = {
   title: 'Маркетплейс Метрика — аналитика Ozon и Wildberries для селлеров',
-  description: 'Сервис аналитики для продавцов Ozon и Wildberries. Подайте заявку на бета-тест и получите 3 месяца бесплатного доступа после одобрения.',
+  description: 'Бесплатная аналитика для продавцов Ozon и Wildberries по вручную загруженным отчётам. API-подключение в разработке и будет доступно позже.',
   image: `${SITE_URL}/marketplace-metrics-logo.svg`,
 };
 

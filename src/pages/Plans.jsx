@@ -6,6 +6,7 @@ import { Button } from '@/components/ui/button';
 import Logo from '@/components/landing/Logo';
 import ImageUploadBox from '@/components/landing/ImageUploadBox';
 import SiteFooter from '@/components/landing/SiteFooter';
+import { APP_URL } from '@/lib/links';
 
 const basicFeatures = [
   { text: 'Ключевые показатели прибыли', ok: true },
@@ -17,7 +18,7 @@ const basicFeatures = [
   { text: 'Загрузка отчётов вручную (период — 1 месяц)', ok: true },
   { text: 'Расширенные категории движения финансов', ok: false },
   { text: 'Тонкая настройка под ваши задачи', ok: false },
-  { text: 'Подключение через API', ok: false },
+  { text: 'Подключение через API (в разработке)', ok: false },
   { text: 'Любой период отчётности', ok: false },
 ];
 
@@ -30,7 +31,7 @@ const proFeatures = [
   { text: 'Учёт налога', ok: true },
   { text: 'Расширенные категории движения финансов', ok: true },
   { text: 'Тонкая настройка под ваши задачи', ok: true },
-  { text: 'Подключение через API', ok: true },
+  { text: 'Подключение через API (в разработке)', ok: true },
   { text: 'Любой период отчётности', ok: true },
   { text: 'Приоритетная поддержка', ok: true },
 ];
@@ -76,13 +77,13 @@ export default function Plans() {
           >
             <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/10 border border-primary/20 text-primary font-semibold text-sm mb-6">
               <Zap className="w-4 h-4" />
-              Тарифные планы
+              Бесплатный доступ
             </div>
             <h1 className="font-inter font-extrabold text-3xl sm:text-4xl lg:text-5xl text-foreground mb-4">
-              Выберите свой тариф
+              Начните с ручной загрузки отчётов
             </h1>
             <p className="text-lg text-muted-foreground max-w-xl mx-auto">
-              Два варианта подписки — для старта и для профессионального роста. Оба с 7-дневным бесплатным пробным периодом.
+              Сейчас анализ вручную загруженных отчётов доступен бесплатно. Расширенные тарифы и API-подключение в разработке и будут доступны позже.
             </p>
           </motion.div>
 
@@ -102,11 +103,11 @@ export default function Plans() {
                   <div className="mb-6">
                     <div className="inline-flex items-center gap-2 bg-secondary text-secondary-foreground px-3 py-1 rounded-full text-xs font-semibold mb-4">
                       <Upload className="w-3 h-3" />
-                      Базовый
+                      Доступно сейчас
                     </div>
                     <div className="flex items-baseline gap-1">
-                      <span className="text-5xl font-black gradient-bp-text">550</span>
-                      <span className="text-xl font-bold text-muted-foreground">₽/мес</span>
+                      <span className="text-5xl font-black gradient-bp-text">0</span>
+                      <span className="text-xl font-bold text-muted-foreground">₽</span>
                     </div>
                     <p className="text-sm text-muted-foreground mt-2">
                       Самое необходимое для понимания вашей отчётности. Загрузка отчётов вручную за период до 1 месяца.
@@ -119,13 +120,16 @@ export default function Plans() {
 
                   <div className="mt-7">
                     <Button
+                      asChild
                       size="lg"
                       className="w-full gradient-bp hover:opacity-90 text-white font-bold rounded-full border-0"
                     >
-                      Начать бесплатно
-                      <ArrowLeft className="w-4 h-4 ml-2 rotate-180" />
+                      <a href={APP_URL}>
+                        Начать бесплатно
+                        <ArrowLeft className="w-4 h-4 ml-2 rotate-180" />
+                      </a>
                     </Button>
-                    <p className="text-xs text-muted-foreground text-center mt-3">7 дней бесплатно · доступ через Telegram-бот</p>
+                    <p className="text-xs text-muted-foreground text-center mt-3">Заявка не нужна · переход сразу в приложение</p>
                   </div>
                 </div>
               </div>
@@ -170,7 +174,7 @@ export default function Plans() {
                         <span className="text-5xl font-black gradient-bp-text">—</span>
                       </div>
                       <p className="text-sm text-muted-foreground mt-2">
-                        Расширенная аналитика со всеми категориями движения финансов. Подключение через API — без ограничений по периоду отчётности.
+                        Расширенная аналитика со всеми категориями движения финансов. Подключение через API и полноценная интеграция с Ozon сейчас в разработке и будут доступны позже.
                       </p>
                     </div>
 
@@ -183,8 +187,9 @@ export default function Plans() {
                         size="lg"
                         variant="outline"
                         className="w-full rounded-full font-bold border-primary/30 text-primary hover:bg-primary/5"
+                        disabled
                       >
-                        Узнать о запуске
+                        В разработке
                       </Button>
                       <p className="text-xs text-muted-foreground text-center mt-3">Профессиональный тариф в разработке</p>
                     </div>
@@ -218,9 +223,9 @@ export default function Plans() {
               <Shield className="w-5 h-5 text-green-600" />
             </div>
             <div>
-              <p className="font-semibold text-foreground mb-1">7 дней бесплатного доступа на каждом тарифе</p>
+              <p className="font-semibold text-foreground mb-1">Бесплатный доступ на старте</p>
               <p className="text-sm text-muted-foreground">
-                Попробуйте любой тариф без оплаты. Отмена в любой момент через Telegram-бот. Никаких скрытых платежей.
+                Сейчас можно бесплатно анализировать вручную загруженные отчёты. Подписки и API-подключение в разработке и будут доступны после следующего этапа развития продукта.
               </p>
             </div>
           </motion.div>

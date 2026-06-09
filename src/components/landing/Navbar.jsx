@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import Logo from './Logo';
-import BetaRequestDialog from './BetaRequestDialog';
+import { APP_URL } from '@/lib/links';
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -19,7 +19,7 @@ export default function Navbar() {
     { label: 'Возможности', href: '#features' },
     { label: 'Как работает', href: '#how-it-works' },
     { label: 'История создания', href: '#story' },
-    { label: 'Бета-тест', href: '#pricing' },
+    { label: 'Бесплатный доступ', href: '#pricing' },
     { label: 'FAQ', href: '#faq' },
   ];
 
@@ -51,11 +51,9 @@ export default function Navbar() {
           </div>
 
           <div className="hidden md:block">
-            <BetaRequestDialog>
-              <Button className="gradient-bp hover:opacity-90 text-white font-semibold px-6 rounded-full shadow-sm border-0">
-                Подать заявку
-              </Button>
-            </BetaRequestDialog>
+            <Button asChild className="gradient-bp hover:opacity-90 text-white font-semibold px-6 rounded-full shadow-sm border-0">
+              <a href={APP_URL}>Войти в сервис</a>
+            </Button>
           </div>
 
           <button
@@ -86,14 +84,12 @@ export default function Navbar() {
                   {link.label}
                 </a>
               ))}
-              <BetaRequestDialog>
-                <Button
-                  className="w-full gradient-bp hover:opacity-90 text-white font-semibold rounded-full mt-2 border-0"
-                  onClick={() => setMobileOpen(false)}
-                >
-                  Подать заявку
-                </Button>
-              </BetaRequestDialog>
+              <Button
+                asChild
+                className="w-full gradient-bp hover:opacity-90 text-white font-semibold rounded-full mt-2 border-0"
+              >
+                <a href={APP_URL} onClick={() => setMobileOpen(false)}>Войти в сервис</a>
+              </Button>
             </div>
           </motion.div>
         )}

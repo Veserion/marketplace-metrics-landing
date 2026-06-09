@@ -4,8 +4,8 @@ import { Badge } from "@/components/ui/badge";
 import { ArrowRight, FileSpreadsheet, Plug, Clock } from "lucide-react";
 import { motion } from "framer-motion";
 import HeroBackground from './HeroBackground';
-import BetaRequestDialog from './BetaRequestDialog';
 import ImageUploadBox from './ImageUploadBox';
+import { APP_URL } from '@/lib/links';
 
 export default function HeroSection() {
   return (
@@ -20,7 +20,7 @@ export default function HeroSection() {
                 transition={{ duration: 0.6 }}
             >
               <Badge className="mb-6 px-4 py-1.5 bg-primary/10 text-primary border-primary/20 rounded-full font-medium text-sm hover:bg-primary/10">
-                Набираем участников бета-теста
+                Бесплатный доступ открыт
               </Badge>
             </motion.div>
 
@@ -44,8 +44,8 @@ export default function HeroSection() {
                 transition={{ duration: 0.6, delay: 0.25 }}
                 className="mt-6 text-lg sm:text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed"
             >
-              Подайте заявку на ранний доступ. Одобренные участники получат
-              3 месяца бесплатного доступа к аналитике Ozon и Wildberries.
+              Загружайте отчёты вручную и бесплатно получайте аналитику магазина.
+              API-подключение и полноценная интеграция с Ozon сейчас в разработке и будут доступны позже.
             </motion.p>
 
             <motion.div
@@ -56,8 +56,8 @@ export default function HeroSection() {
             >
               {[
                 { icon: FileSpreadsheet, text: 'Без сложностей с Excel' },
-                { icon: Plug, text: 'Без API на старте' },
-                { icon: Clock, text: '3 месяца бесплатно' },
+                { icon: Plug, text: 'API в разработке' },
+                { icon: Clock, text: 'Бесплатно на старте' },
               ].map((item, i) => (
                   <div key={i} className="flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-border shadow-sm">
                     <item.icon className="w-4 h-4 text-primary" />
@@ -72,15 +72,16 @@ export default function HeroSection() {
                 transition={{ duration: 0.6, delay: 0.45 }}
                 className="mt-10"
             >
-              <BetaRequestDialog>
-                <Button
-                    size="lg"
-                    className="gradient-bp hover:opacity-90 text-white font-bold text-base px-8 py-6 rounded-full shadow-lg shadow-purple-300/30 hover:shadow-purple-400/40 transition-all duration-300 border-0"
-                >
-                  Подать заявку на бета-тест
+              <Button
+                  asChild
+                  size="lg"
+                  className="gradient-bp hover:opacity-90 text-white font-bold text-base px-8 py-6 rounded-full shadow-lg shadow-purple-300/30 hover:shadow-purple-400/40 transition-all duration-300 border-0"
+              >
+                <a href={APP_URL}>
+                  Перейти в сервис
                   <ArrowRight className="w-5 h-5 ml-2" />
-                </Button>
-              </BetaRequestDialog>
+                </a>
+              </Button>
             </motion.div>
           </div>
 

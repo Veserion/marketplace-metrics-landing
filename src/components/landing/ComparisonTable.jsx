@@ -11,8 +11,8 @@ const rows = [
   { feature: 'Визуализация данных', excel: 'bad', metrika: 'good' },
   { feature: 'Рекомендации по поставкам', excel: 'bad', metrika: 'good' },
   { feature: 'ABC-анализ товаров', excel: 'bad', metrika: 'good' },
-  { feature: 'Возможна API интеграция', excel: 'bad', metrika: 'good' },
-  { feature: 'Доступ на этапе беты', excel: 'bad-text', excelText: 'Дорого по времени', metrika: 'good-text', metrikaText: '3 месяца бесплатно' },
+  { feature: 'Ручная загрузка отчётов без API', excel: 'bad', metrika: 'good' },
+  { feature: 'Бесплатный доступ на старте', excel: 'bad-text', excelText: 'Дорого по времени', metrika: 'good-text', metrikaText: 'Бесплатно' },
 ];
 
 function ExcelCell({ row }) {

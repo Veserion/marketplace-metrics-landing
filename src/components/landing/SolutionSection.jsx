@@ -23,7 +23,7 @@ export default function SolutionSection() {
           </h2>
           <p className="mt-4 text-lg text-muted-foreground max-w-2xl mx-auto">
             Сервис превращает сложные отчёты маркетплейсов в понятную аналитику.
-            Не нужно разбираться в Excel или подключать API.
+            Не нужно разбираться в Excel или подключать API: API сейчас в разработке и будет доступно позже.
           </p>
         </motion.div>
 
